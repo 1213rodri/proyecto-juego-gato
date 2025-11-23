@@ -1,281 +1,525 @@
+<div align="center">
 
-# Licencia de Proyecto Académico
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║                          📜 LICENCIA ACADÉMICA                       ║
+║                                                                      ║
+║                             Juego del Gato                           ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
 
-## Proyecto: Juego del Gato (Tic-Tac-Toe)
+![License Type](https://img.shields.io/badge/License-Academic-blue?style=for-the-badge)
+![Rights](https://img.shields.io/badge/All_Rights-Reserved-red?style=for-the-badge)
+![Type](https://img.shields.io/badge/Type-Educational-green?style=for-the-badge)
 
-**Copyright © 2024 [Tu Nombre] y [Nombre Compañero]. Todos los derechos reservados.**
+**Copyright © 2024 Rodrigo Nuñez Garcia**
+
+*Todos los derechos reservados*
+
+</div>
 
 ---
 
-## 📚 Naturaleza del Proyecto
+## 📚 Información del Proyecto
 
-Este proyecto fue desarrollado como parte de un curso académico de programación con fines exclusivamente **educativos** y de **aprendizaje**.
+<table>
+<tr>
+<td width="50%">
 
-### Información Académica
-
+### 🏫 Datos Académicos
+```yaml
+Institución: Universidad Veracruzana
+Curso: Programación
+Profesor: Virginia
+Período: 2025, 1er semestre
 ```
-🏫 Institución: [Nombre de tu Universidad/Escuela]
-📖 Curso: Programación / Fundamentos de Programación
-👨‍🏫 Profesor: [Nombre del Profesor]
-📅 Período Académico: [Semestre/Año]
-👥 Autores: [Tu Nombre] y [Nombre Compañero]
+
+</td>
+<td width="50%">
+
+### 👥 Autores
+```yaml
+Desarrollador 1: Rodrigo Nuñez Garcia
+Email: 
+Desarrollador 2:   
+Email:
+Desarrollador 3: Rodrigo Nuñez Garcia
+Email: 
+Desarrollador 4:   
+Email:
 ```
+
+</td>
+</tr>
+</table>
 
 ---
 
-## ⚖️ Términos de Uso
+<div align="center">
+
+## ⚖️ TÉRMINOS DE USO
+
+</div>
 
 ### ✅ PERMITIDO
 
-Se permite:
+<table>
+<tr>
+<td width="25%" align="center">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Books.png" width="60"/>
 
-1. **📖 Visualización y Estudio**
-   - Ver y estudiar el código fuente
-   - Aprender de las implementaciones y técnicas utilizadas
-   - Usar como referencia para comprender conceptos de programación
+**📖 Estudio**
 
-2. **🔍 Análisis Académico**
-   - Analizar la arquitectura y diseño del software
-   - Revisar algoritmos y estructuras de datos
-   - Evaluar las mejores prácticas de programación
+Ver y estudiar el código fuente
 
-3. **🎓 Uso Educativo Personal**
-   - Usar como material de estudio personal
-   - Consultar para resolver dudas de programación
-   - Comparar con tu propio trabajo para aprender
+</td>
+<td width="25%" align="center">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="60"/>
 
-4. **🔗 Compartir Referencias**
-   - Compartir el enlace del repositorio
-   - Citar el proyecto en trabajos académicos (con atribución adecuada)
-   - Recomendar como ejemplo de código bien estructurado
+**🔍 Análisis**
 
-### ❌ NO PERMITIDO
+Analizar arquitectura y algoritmos
 
-**Está estrictamente prohibido:**
+</td>
+<td width="25%" align="center">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Graduation%20Cap.png" width="60"/>
 
-1. **📋 Copia y Plagio**
-   - Copiar código parcial o total para entregas académicas
-   - Presentar este código como trabajo propio
-   - Reutilizar funciones sin autorización explícita del profesor
-   - Modificar mínimamente el código para "hacerlo tuyo"
+**🎓 Aprendizaje**
 
-2. **💰 Uso Comercial**
-   - Vender o comercializar este software
-   - Usar el código en proyectos comerciales
-   - Integrar en productos de pago
-   - Redistribuir con fines lucrativos
+Usar como referencia educativa
 
-3. **📦 Redistribución No Autorizada**
-   - Redistribuir el código sin atribución
-   - Publicar en otros repositorios sin permiso
-   - Incluir en colecciones o compilaciones sin autorización
-   - Modificar la licencia original
+</td>
+<td width="25%" align="center">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="60"/>
 
-4. **🔄 Modificación y Distribución**
-   - Crear trabajos derivados para entrega académica
-   - Distribuir versiones modificadas como propias
-   - Eliminar avisos de copyright o autoría
-   - Cambiar la atribución del código
+**🔗 Compartir**
+
+Compartir el enlace del repo
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🎓 Para Estudiantes
+### ❌ PROHIBIDO
 
-### ⚠️ Advertencia sobre Integridad Académica
+<table>
+<tr>
+<td width="25%" align="center">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Prohibited.png" width="60"/>
 
-**IMPORTANTE:** Si eres estudiante y tienes un proyecto similar:
+**📋 Plagio**
 
-- ❌ **NO copies** este código para tu entrega
-- ❌ **NO modifiques** ligeramente el código para evitar detección
-- ❌ **NO uses** este código sin comprenderlo completamente
-- ✅ **SÍ úsalo** como referencia para aprender
-- ✅ **SÍ consulta** conceptos y técnicas
-- ✅ **SÍ implementa** tu propia solución original
+Copiar código para entregas
 
-### 📝 Consecuencias del Plagio Académico
+</td>
+<td width="25%" align="center">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Money%20Bag.png" width="60"/>
 
-El plagio académico puede resultar en:
-- 📉 Calificación reprobatoria en la materia
-- ⚠️ Sanciones disciplinarias
-- 🚫 Expulsión de la institución
-- 📋 Registro permanente en expediente académico
+**💰 Comercial**
 
-### ✅ Cómo Usar Este Proyecto Éticamente
+Vender o comercializar
 
-1. **Estudia** la estructura y lógica del programa
-2. **Comprende** los conceptos y algoritmos utilizados
-3. **Cierra** este repositorio
-4. **Implementa** tu propia solución desde cero
-5. **Consulta** de nuevo solo si tienes dudas específicas
+</td>
+<td width="25%" align="center">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/No%20Entry.png" width="60"/>
 
----
+**📦 Redistribuir**
 
-## 👨‍🏫 Para Profesores e Instituciones
+Sin atribución adecuada
 
-### 📖 Uso en Contexto Educativo
+</td>
+<td width="25%" align="center">
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Thumbs%20Down.png" width="60"/>
 
-Los profesores e instituciones educativas pueden:
+**🔄 Modificar**
 
-- ✅ Usar este proyecto como **material de referencia** en clases
-- ✅ Mostrar como **ejemplo de buenas prácticas**
-- ✅ Analizar en **sesiones de revisión de código**
-- ✅ Incluir en **bibliotecas de recursos educativos**
+Para entrega académica
 
-**Condición:** Debe hacerse con **atribución adecuada** a los autores originales.
-
-### 🔍 Detección de Plagio
-
-Este repositorio es público y puede ser utilizado por herramientas de detección de plagio como:
-- Turnitin
-- Moss (Measure of Software Similarity)
-- JPlag
-- Copyleaks
+</td>
+</tr>
+</table>
 
 ---
 
-## 📜 Atribución
+<div align="center">
 
-Si deseas referenciar este proyecto en trabajos académicos, usa el siguiente formato:
+## 🎓 PARA ESTUDIANTES
 
-### Formato APA
+</div>
+
+> ### ⚠️ **ADVERTENCIA IMPORTANTE SOBRE INTEGRIDAD ACADÉMICA**
+> 
+> Si tienes un proyecto similar, este código debe ser usado **SOLO como referencia para aprender**.
+
+<br>
+
+<div align="center">
+
+### ✅ CÓMO USAR ESTE PROYECTO ÉTICAMENTE
+
+</div>
+
+```mermaid
+graph LR
+    A[📖 Estudia<br/>el código] --> B[💡 Comprende<br/>los conceptos]
+    B --> C[🚪 Cierra<br/>el repo]
+    C --> D[⌨️ Implementa<br/>tu solución]
+    D --> E[✅ Consulta solo<br/>si tienes dudas]
+    
+    style A fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#2196F3,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#FF9800,stroke:#333,stroke-width:2px,color:#fff
+    style D fill:#9C27B0,stroke:#333,stroke-width:2px,color:#fff
+    style E fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
 ```
-[Tu Nombre] & [Nombre Compañero]. (2024). Juego del Gato (Tic-Tac-Toe) 
+
+<br>
+
+### ⛔ CONSECUENCIAS DEL PLAGIO
+
+<table>
+<tr>
+<td align="center" width="25%">
+
+**📉**
+
+Reprobación de materia
+
+</td>
+<td align="center" width="25%">
+
+**⚠️**
+
+Sanciones disciplinarias
+
+</td>
+<td align="center" width="25%">
+
+**🚫**
+
+Posible expulsión
+
+</td>
+<td align="center" width="25%">
+
+**📋**
+
+Registro permanente
+
+</td>
+</tr>
+</table>
+
+---
+
+<div align="center">
+
+## 👨‍🏫 PARA PROFESORES
+
+</div>
+
+Los educadores pueden usar este proyecto como:
+
+<table>
+<tr>
+<td align="center" width="33%">
+
+### 📚 Material de Clase
+
+Ejemplos de buenas prácticas
+
+</td>
+<td align="center" width="33%">
+
+### 🔍 Revisión de Código
+
+Sesiones de análisis técnico
+
+</td>
+<td align="center" width="33%">
+
+### 📖 Recursos Educativos
+
+Biblioteca de referencias
+
+</td>
+</tr>
+</table>
+
+**Condición:** Debe hacerse con **atribución adecuada** a los autores.
+
+<br>
+
+> **🔍 Detección de Plagio**
+> 
+> Este repositorio es público y puede ser usado por herramientas como:
+> - Turnitin
+> - Moss (Measure of Software Similarity)
+> - JPlag
+> - Copyleaks
+
+---
+
+<div align="center">
+
+## 📜 CÓMO CITAR ESTE PROYECTO
+
+</div>
+
+<details>
+<summary><b>📘 Formato APA</b></summary>
+
+```
+Rodrigo Nuñez Garcia. 2024. "Juego del Gato."
 [Software de código fuente]. GitHub. 
-https://github.com/TU_USUARIO/proyecto-juego-gato
+https://github.com/1213rodri/proyecto-juego-gato
 ```
 
-### Formato IEEE
+</details>
+
+<details>
+<summary><b>📗 Formato IEEE</b></summary>
+
 ```
-[Tu Nombre] y [Nombre Compañero], "Juego del Gato (Tic-Tac-Toe)," 
+Rodrigo Nuñez Garcia. 2024. "Juego del Gato." 
 GitHub repository, 2024. [Online]. 
-Disponible: https://github.com/TU_USUARIO/proyecto-juego-gato
+Disponible: https://github.com/1213rodri/proyecto-juego-gato
 ```
 
-### Formato Chicago
+</details>
+
+<details>
+<summary><b>📕 Formato Chicago</b></summary>
+
 ```
-[Tu Nombre] y [Nombre Compañero]. 2024. "Juego del Gato (Tic-Tac-Toe)." 
-GitHub. https://github.com/TU_USUARIO/proyecto-juego-gato.
+Rodrigo Nuñez Garcia. 2024. "Juego del Gato." 
+GitHub. https://github.com/1213rodri/proyecto-juego-gato.
 ```
+
+</details>
 
 ---
 
-## 🤝 Contribuciones
+<div align="center">
 
-Este es un proyecto académico cerrado. **No se aceptan contribuciones externas** de terceros.
+## 🛡️ GARANTÍAS Y RESPONSABILIDAD
 
-Solo los autores originales del proyecto pueden hacer modificaciones.
-
----
-
-## 🛡️ Garantías y Responsabilidad
+</div>
 
 ### ⚠️ Descargo de Responsabilidad
 
-Este software se proporciona **"TAL CUAL"**, sin garantías de ningún tipo, expresas o implícitas, incluyendo pero no limitado a:
+<table>
+<tr>
+<td width="50%">
 
-- ✗ Garantías de comerciabilidad
-- ✗ Garantías de idoneidad para un propósito particular
-- ✗ Garantías de no infracción
-- ✗ Garantías de funcionamiento correcto
-- ✗ Garantías de ausencia de errores
+#### ❌ SIN GARANTÍAS DE:
 
-### 📋 Limitación de Responsabilidad
+- Comerciabilidad
+- Idoneidad para propósito específico
+- No infracción
+- Funcionamiento correcto
+- Ausencia de errores
 
-En ningún caso los autores serán responsables por:
+</td>
+<td width="50%">
 
-- Daños directos, indirectos, incidentales o consecuentes
+#### ⚖️ LIMITACIÓN DE RESPONSABILIDAD:
+
+Los autores **NO son responsables** por:
+- Daños directos o indirectos
 - Pérdida de datos o beneficios
-- Interrupción de negocios o estudios
-- Cualquier otro daño derivado del uso del software
+- Interrupción de actividades
+- Cualquier otro daño derivado
 
-**USAS ESTE SOFTWARE BAJO TU PROPIO RIESGO.**
+</td>
+</tr>
+</table>
 
----
+<br>
 
-## 🔒 Privacidad y Datos
-
-### Guía Web Interactiva
-
-La guía web incluida utiliza **Firebase Firestore** para almacenar:
-- Nombre de usuario (proporcionado voluntariamente)
-- Progreso en tareas (marcado por el usuario)
-
-**NO se recopilan:**
-- ❌ Datos personales sensibles
-- ❌ Información de contacto
-- ❌ Datos de ubicación
-- ❌ Información del dispositivo
-
-Los datos almacenados son **anónimos** y se usan únicamente para la funcionalidad de progreso de la guía.
+> ### 🎯 USAS ESTE SOFTWARE BAJO TU PROPIO RIESGO
 
 ---
 
-## 📞 Contacto
+<div align="center">
 
-Para preguntas sobre esta licencia o el uso del proyecto:
+## 🔒 PRIVACIDAD DE DATOS
 
-- 📧 **Email**: [tu.email@ejemplo.com]
-- 🐙 **GitHub**: [@TU_USUARIO]
-- 💼 **LinkedIn**: [Tu Perfil]
+</div>
 
-**Tiempo de respuesta:** 24-48 horas
+### Guía Web Interactiva con Firebase
+
+<table>
+<tr>
+<td width="50%" align="center">
+
+#### ✅ SE ALMACENA:
+
+- Nombre de usuario (voluntario)
+- Progreso en tareas
+
+</td>
+<td width="50%" align="center">
+
+#### ❌ NO SE RECOPILA:
+
+- Datos personales sensibles
+- Información de contacto
+- Datos de ubicación
+- Info del dispositivo
+
+</td>
+</tr>
+</table>
+
+> **🔐 Todos los datos son anónimos** y se usan únicamente para funcionalidad de progreso.
 
 ---
 
-## 📅 Historial de Versiones de Licencia
+<div align="center">
 
-| Versión | Fecha | Cambios |
-|---------|-------|---------|
-| 1.0 | [Fecha] | Licencia inicial del proyecto |
+## 🤝 CONTRIBUCIONES
 
----
+</div>
 
-## 🌐 Jurisdicción
-
-Esta licencia se rige por las leyes de **[Tu País/Estado]** y cualquier disputa se resolverá en los tribunales de **[Tu Ciudad/Región]**.
-
----
-
-## ✍️ Firmado
-
-```
-Autores del Proyecto:
-- [Tu Nombre]
-- [Nombre Compañero]
-
-Fecha: [Fecha de Creación]
-Versión de Licencia: 1.0
+```diff
+! Este es un PROYECTO ACADÉMICO CERRADO
+- No se aceptan Pull Requests externos
+- No se aceptan Issues de funcionalidades
++ Solo los autores pueden hacer modificaciones
++ Se aceptan reportes de errores críticos
 ```
 
 ---
 
 <div align="center">
 
-**© 2024 [Tu Nombre] y [Nombre Compañero]. Todos los derechos reservados.**
-
-*Este proyecto se desarrolló con 💙 para aprender y enseñar programación*
-
-**Desarrollado con fines académicos - Uso responsable y ético**
-
----
-
-### 🔐 Integridad Académica
-
-*"El conocimiento se construye sobre bases honestas.  
-Aprende, comprende, y crea tu propio camino."*
-
----
+## 📞 CONTACTO
 
 </div>
 
-## 📚 Recursos Adicionales sobre Integridad Académica
+<table align="center">
+<tr>
+<td align="center">
 
-- [IEEE Code of Ethics](https://www.ieee.org/about/corporate/governance/p7-8.html)
-- [ACM Code of Ethics](https://www.acm.org/code-of-ethics)
-- [Guía sobre Plagio Académico](https://www.plagiarism.org/)
+### 📧 Email
+
+[roxdnunez@gmail.com](mailto:roxdnunez@gmail.com)
+
+</td>
+<td align="center">
+
+### 🐙 GitHub
+
+[@1213rodri](https://github.com/1213rodri)
+
+</td>
+<td align="center">
+
+### ⏱️ Respuesta
+
+24-48 horas
+
+</td>
+</tr>
+</table>
 
 ---
 
-**Última actualización:** [Fecha]  
-**Versión de documento:** 1.0  
-**Estado:** Activo
+<div align="center">
+
+## 📅 CONTROL DE VERSIONES
+
+</div>
+
+| Versión | Fecha | Cambios |
+|:-------:|:-----:|:-------:|
+| ![v1.0](https://img.shields.io/badge/v1.0-current-brightgreen) | 22/11/25 | Licencia inicial del proyecto |
+
+---
+
+<div align="center">
+
+## 🌐 JURISDICCIÓN LEGAL
+
+</div>
+
+> Esta licencia se rige por las leyes de **Mexico, Veracruz**  
+> Disputas se resolverán en tribunales de **Xalapa, Veracruz**
+
+---
+
+<br>
+
+<div align="center">
+
+```
+╔════════════════════════════════════════════════════════════╗
+║                                                            ║
+║                      ✍️ FIRMADO POR                        ║
+║                                                            ║
+║    👤 Rodrigo                                              ║
+║                                                            ║
+║    📅 Fecha: 22/11/25                                      ║
+║    📋 Versión de Licencia: 1.0                             ║
+║    ✅ Estado: Activo                                       ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
+```
+
+<br>
+
+---
+
+### 💙 Proyecto desarrollado con fines académicos
+
+**© 2024 Rodrigo NUñez Garcia**
+
+*Todos los derechos reservados*
+
+---
+
+<br>
+
+### 🔐 Mensaje de Integridad Académica
+
+```
+╭──────────────────────────────────────────────────────────╮
+│                                                          │
+│  "El conocimiento se construye sobre bases honestas.    │
+│   Aprende, comprende, y crea tu propio camino."         │
+│                                                          │
+│              - Comunidad de Desarrolladores              │
+│                                                          │
+╰──────────────────────────────────────────────────────────╯
+```
+
+<br>
+
+---
+
+### 📚 Recursos sobre Integridad Académica
+
+[![IEEE](https://img.shields.io/badge/IEEE-Code_of_Ethics-00629B?style=for-the-badge&logo=ieee)](https://www.ieee.org/about/corporate/governance/p7-8.html)
+[![ACM](https://img.shields.io/badge/ACM-Code_of_Ethics-0085CA?style=for-the-badge)](https://www.acm.org/code-of-ethics)
+[![Info](https://img.shields.io/badge/Plagio-Academic_Info-red?style=for-the-badge)](https://www.plagiarism.org/)
+
+<br>
+
+---
+
+<br>
+
+**📄 Última actualización:** 22/11/25  
+**🔖 Versión de documento:** 1.0  
+**✅ Estado:** Activo y Vigente
+
+<br>
+
+[![Back to Top](https://img.shields.io/badge/⬆️_Volver_Arriba-blue?style=for-the-badge)](#)
+
+</div>
