@@ -1,4 +1,7 @@
 # proyecto-juego-gato
 
-<img width="71" height="25" alt="image" src="https://github.com/user-attachments/assets/1a02380f-4e64-4cd0-b53b-5c1775a98eb0" /> <img width="258" height="63" alt="image" src="https://github.com/user-attachments/assets/8b311d90-975e-4b90-8f98-b0f1b295e00f" />
+<img width="354" height="140" alt="image" src="https://github.com/user-attachments/assets/4ae9d1aa-6f10-4968-8714-395b55c6373d"  /> <img width="545" height="140" alt="image" src="https://github.com/user-attachments/assets/4e616884-5618-4010-be83-8b8eed8a4d65" /> <img width="1028" height="140" alt="image" src="https://github.com/user-attachments/assets/a759901a-06eb-4beb-bff7-b11e395f4ab1" />
+
+
+
 
