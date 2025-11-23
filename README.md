@@ -580,9 +580,9 @@ Este proyecto fue desarrollado con fines **educativos** para el curso de Program
 
 ## 📈 Estadísticas del Proyecto
 
-![GitHub repo size](https://img.shields.io/github/repo-size/TU_USUARIO/proyecto-juego-gato?style=flat-square)
-![GitHub code size](https://img.shields.io/github/languages/code-size/TU_USUARIO/proyecto-juego-gato?style=flat-square)
-![Lines of code](https://img.shields.io/tokei/lines/github/TU_USUARIO/proyecto-juego-gato?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/1213rodri/proyecto-juego-gato?style=flat-square)
+![GitHub code size](https://img.shields.io/github/languages/code-size/1213rodri/proyecto-juego-gato?style=flat-square)
+![Lines of code](https://img.shields.io/tokei/lines/github/1213rodri/proyecto-juego-gato?style=flat-square)
 
 ---
 
