@@ -1,1 +1,281 @@
 
+# Licencia de Proyecto Académico
+
+## Proyecto: Juego del Gato (Tic-Tac-Toe)
+
+**Copyright © 2024 [Tu Nombre] y [Nombre Compañero]. Todos los derechos reservados.**
+
+---
+
+## 📚 Naturaleza del Proyecto
+
+Este proyecto fue desarrollado como parte de un curso académico de programación con fines exclusivamente **educativos** y de **aprendizaje**.
+
+### Información Académica
+
+```
+🏫 Institución: [Nombre de tu Universidad/Escuela]
+📖 Curso: Programación / Fundamentos de Programación
+👨‍🏫 Profesor: [Nombre del Profesor]
+📅 Período Académico: [Semestre/Año]
+👥 Autores: [Tu Nombre] y [Nombre Compañero]
+```
+
+---
+
+## ⚖️ Términos de Uso
+
+### ✅ PERMITIDO
+
+Se permite:
+
+1. **📖 Visualización y Estudio**
+   - Ver y estudiar el código fuente
+   - Aprender de las implementaciones y técnicas utilizadas
+   - Usar como referencia para comprender conceptos de programación
+
+2. **🔍 Análisis Académico**
+   - Analizar la arquitectura y diseño del software
+   - Revisar algoritmos y estructuras de datos
+   - Evaluar las mejores prácticas de programación
+
+3. **🎓 Uso Educativo Personal**
+   - Usar como material de estudio personal
+   - Consultar para resolver dudas de programación
+   - Comparar con tu propio trabajo para aprender
+
+4. **🔗 Compartir Referencias**
+   - Compartir el enlace del repositorio
+   - Citar el proyecto en trabajos académicos (con atribución adecuada)
+   - Recomendar como ejemplo de código bien estructurado
+
+### ❌ NO PERMITIDO
+
+**Está estrictamente prohibido:**
+
+1. **📋 Copia y Plagio**
+   - Copiar código parcial o total para entregas académicas
+   - Presentar este código como trabajo propio
+   - Reutilizar funciones sin autorización explícita del profesor
+   - Modificar mínimamente el código para "hacerlo tuyo"
+
+2. **💰 Uso Comercial**
+   - Vender o comercializar este software
+   - Usar el código en proyectos comerciales
+   - Integrar en productos de pago
+   - Redistribuir con fines lucrativos
+
+3. **📦 Redistribución No Autorizada**
+   - Redistribuir el código sin atribución
+   - Publicar en otros repositorios sin permiso
+   - Incluir en colecciones o compilaciones sin autorización
+   - Modificar la licencia original
+
+4. **🔄 Modificación y Distribución**
+   - Crear trabajos derivados para entrega académica
+   - Distribuir versiones modificadas como propias
+   - Eliminar avisos de copyright o autoría
+   - Cambiar la atribución del código
+
+---
+
+## 🎓 Para Estudiantes
+
+### ⚠️ Advertencia sobre Integridad Académica
+
+**IMPORTANTE:** Si eres estudiante y tienes un proyecto similar:
+
+- ❌ **NO copies** este código para tu entrega
+- ❌ **NO modifiques** ligeramente el código para evitar detección
+- ❌ **NO uses** este código sin comprenderlo completamente
+- ✅ **SÍ úsalo** como referencia para aprender
+- ✅ **SÍ consulta** conceptos y técnicas
+- ✅ **SÍ implementa** tu propia solución original
+
+### 📝 Consecuencias del Plagio Académico
+
+El plagio académico puede resultar en:
+- 📉 Calificación reprobatoria en la materia
+- ⚠️ Sanciones disciplinarias
+- 🚫 Expulsión de la institución
+- 📋 Registro permanente en expediente académico
+
+### ✅ Cómo Usar Este Proyecto Éticamente
+
+1. **Estudia** la estructura y lógica del programa
+2. **Comprende** los conceptos y algoritmos utilizados
+3. **Cierra** este repositorio
+4. **Implementa** tu propia solución desde cero
+5. **Consulta** de nuevo solo si tienes dudas específicas
+
+---
+
+## 👨‍🏫 Para Profesores e Instituciones
+
+### 📖 Uso en Contexto Educativo
+
+Los profesores e instituciones educativas pueden:
+
+- ✅ Usar este proyecto como **material de referencia** en clases
+- ✅ Mostrar como **ejemplo de buenas prácticas**
+- ✅ Analizar en **sesiones de revisión de código**
+- ✅ Incluir en **bibliotecas de recursos educativos**
+
+**Condición:** Debe hacerse con **atribución adecuada** a los autores originales.
+
+### 🔍 Detección de Plagio
+
+Este repositorio es público y puede ser utilizado por herramientas de detección de plagio como:
+- Turnitin
+- Moss (Measure of Software Similarity)
+- JPlag
+- Copyleaks
+
+---
+
+## 📜 Atribución
+
+Si deseas referenciar este proyecto en trabajos académicos, usa el siguiente formato:
+
+### Formato APA
+```
+[Tu Nombre] & [Nombre Compañero]. (2024). Juego del Gato (Tic-Tac-Toe) 
+[Software de código fuente]. GitHub. 
+https://github.com/TU_USUARIO/proyecto-juego-gato
+```
+
+### Formato IEEE
+```
+[Tu Nombre] y [Nombre Compañero], "Juego del Gato (Tic-Tac-Toe)," 
+GitHub repository, 2024. [Online]. 
+Disponible: https://github.com/TU_USUARIO/proyecto-juego-gato
+```
+
+### Formato Chicago
+```
+[Tu Nombre] y [Nombre Compañero]. 2024. "Juego del Gato (Tic-Tac-Toe)." 
+GitHub. https://github.com/TU_USUARIO/proyecto-juego-gato.
+```
+
+---
+
+## 🤝 Contribuciones
+
+Este es un proyecto académico cerrado. **No se aceptan contribuciones externas** de terceros.
+
+Solo los autores originales del proyecto pueden hacer modificaciones.
+
+---
+
+## 🛡️ Garantías y Responsabilidad
+
+### ⚠️ Descargo de Responsabilidad
+
+Este software se proporciona **"TAL CUAL"**, sin garantías de ningún tipo, expresas o implícitas, incluyendo pero no limitado a:
+
+- ✗ Garantías de comerciabilidad
+- ✗ Garantías de idoneidad para un propósito particular
+- ✗ Garantías de no infracción
+- ✗ Garantías de funcionamiento correcto
+- ✗ Garantías de ausencia de errores
+
+### 📋 Limitación de Responsabilidad
+
+En ningún caso los autores serán responsables por:
+
+- Daños directos, indirectos, incidentales o consecuentes
+- Pérdida de datos o beneficios
+- Interrupción de negocios o estudios
+- Cualquier otro daño derivado del uso del software
+
+**USAS ESTE SOFTWARE BAJO TU PROPIO RIESGO.**
+
+---
+
+## 🔒 Privacidad y Datos
+
+### Guía Web Interactiva
+
+La guía web incluida utiliza **Firebase Firestore** para almacenar:
+- Nombre de usuario (proporcionado voluntariamente)
+- Progreso en tareas (marcado por el usuario)
+
+**NO se recopilan:**
+- ❌ Datos personales sensibles
+- ❌ Información de contacto
+- ❌ Datos de ubicación
+- ❌ Información del dispositivo
+
+Los datos almacenados son **anónimos** y se usan únicamente para la funcionalidad de progreso de la guía.
+
+---
+
+## 📞 Contacto
+
+Para preguntas sobre esta licencia o el uso del proyecto:
+
+- 📧 **Email**: [tu.email@ejemplo.com]
+- 🐙 **GitHub**: [@TU_USUARIO]
+- 💼 **LinkedIn**: [Tu Perfil]
+
+**Tiempo de respuesta:** 24-48 horas
+
+---
+
+## 📅 Historial de Versiones de Licencia
+
+| Versión | Fecha | Cambios |
+|---------|-------|---------|
+| 1.0 | [Fecha] | Licencia inicial del proyecto |
+
+---
+
+## 🌐 Jurisdicción
+
+Esta licencia se rige por las leyes de **[Tu País/Estado]** y cualquier disputa se resolverá en los tribunales de **[Tu Ciudad/Región]**.
+
+---
+
+## ✍️ Firmado
+
+```
+Autores del Proyecto:
+- [Tu Nombre]
+- [Nombre Compañero]
+
+Fecha: [Fecha de Creación]
+Versión de Licencia: 1.0
+```
+
+---
+
+<div align="center">
+
+**© 2024 [Tu Nombre] y [Nombre Compañero]. Todos los derechos reservados.**
+
+*Este proyecto se desarrolló con 💙 para aprender y enseñar programación*
+
+**Desarrollado con fines académicos - Uso responsable y ético**
+
+---
+
+### 🔐 Integridad Académica
+
+*"El conocimiento se construye sobre bases honestas.  
+Aprende, comprende, y crea tu propio camino."*
+
+---
+
+</div>
+
+## 📚 Recursos Adicionales sobre Integridad Académica
+
+- [IEEE Code of Ethics](https://www.ieee.org/about/corporate/governance/p7-8.html)
+- [ACM Code of Ethics](https://www.acm.org/code-of-ethics)
+- [Guía sobre Plagio Académico](https://www.plagiarism.org/)
+
+---
+
+**Última actualización:** [Fecha]  
+**Versión de documento:** 1.0  
+**Estado:** Activo
