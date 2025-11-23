@@ -310,30 +310,7 @@ Acceso desde cualquier dispositivo
 </tr>
 </table>
 
-### 🔧 Configuración de Firebase
 
-1. **Crear proyecto en [Firebase Console](https://console.firebase.google.com/)**
-
-2. **Habilitar Firestore Database**
-   - Modo de prueba para desarrollo
-   - Configurar reglas de seguridad:
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /users/{userId} {
-      allow read, write: if true;
-    }
-  }
-}
-```
-
-3. **Abrir guía**
-   ```bash
-   # Abrir en navegador
-   open docs/index.html
-   ```
 
 ### 📚 Contenido de la Guía
 
@@ -551,10 +528,10 @@ git push
 Este proyecto fue desarrollado con fines **educativos** para el curso de Programación.
 
 ```
-📚 Institución: [Nombre de tu Universidad/Escuela]
-🎓 Curso: Programación / Fundamentos de Programación
-👨‍🏫 Profesor: [Nombre del Profesor]
-📅 Semestre: [Semestre/Año]
+📚 Institución:  Universidad Veracruzana (Facultad de Estadistica e Indormatica) 
+🎓 Curso: Programación /  Introduccion a la Programación
+👨‍🏫 Profesor: LAGUNES BARRADAS, VIRGINIA
+📅 Semestre: 1er semestre 2025
 ```
 
 ---
@@ -563,16 +540,31 @@ Este proyecto fue desarrollado con fines **educativos** para el curso de Program
 
 <table>
 <tr>
+       
 <td align="center">
 <img src="https://github.com/identicons/1.png" width="100px;" alt=""/><br />
 <sub><b>Desarrollador 1</b></sub><br />
 <a href="mailto:tu.email@ejemplo.com">📧 Email</a>
 </td>
+
 <td align="center">
 <img src="https://github.com/identicons/2.png" width="100px;" alt=""/><br />
 <sub><b>Desarrollador 2</b></sub><br />
 <a href="mailto:email@ejemplo.com">📧 Email</a>
 </td>
+
+<td align="center">
+<img src="https://github.com/identicons/3.png" width="100px;" alt=""/><br />
+<sub><b>Desarrollador 3</b></sub><br />
+<a href="mailto:email@ejemplo.com">📧 Email</a>
+</td>
+
+<td align="center">
+<img src="https://github.com/identicons/4.png" width="100px;" alt=""/><br />
+<sub><b>Desarrollador 4</b></sub><br />
+<a href="mailto:email@ejemplo.com">📧 Email</a>
+</td>
+
 </tr>
 </table>
 
@@ -580,11 +572,9 @@ Este proyecto fue desarrollado con fines **educativos** para el curso de Program
 
 ## 🙏 Agradecimientos
 
-- 👨‍🏫 **Profesor [Nombre]** - Por la guía y enseñanza
+- 👨‍🏫 **Profesor LAGUNES BARRADAS, VIRGINIA** - Por la guía y enseñanza
 - 👥 **Compañeros de clase** - Por el apoyo constante
 - 📚 **Comunidad de C++** - Por la documentación
-- 🔥 **Firebase Team** - Por las herramientas en la nube
-- 💻 **Stack Overflow** - Por resolver dudas técnicas
 
 ---
 
@@ -632,7 +622,7 @@ Si este proyecto te fue útil, considera darle una ⭐
 
 ---
 
-**Hecho con ❤️ y ☕ por [Tu Nombre] y [Nombre Compañero]**
+**Hecho con ❤️ y ☕ por MENDEZ CRUZ DIEGO ALBERTO, NUÑEZ GARCIA RODRIGO , RODRIGUEZ DOMINGUEZ JACQUELINE, RONZON RONZON PALOMA DE JESUs**
 
 © 2024 Proyecto Juego del Gato. Todos los derechos reservados.
 
