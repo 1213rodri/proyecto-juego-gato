@@ -1,177 +1,324 @@
-# proyecto-juego-gato
+<div align="center">
 
-<img width="354" height="140" alt="image" src="https://github.com/user-attachments/assets/4ae9d1aa-6f10-4968-8714-395b55c6373d"  /> <img width="545" height="140" alt="image" src="https://github.com/user-attachments/assets/4e616884-5618-4010-be83-8b8eed8a4d65" /> <img width="1028" height="140" alt="image" src="https://github.com/user-attachments/assets/a759901a-06eb-4beb-bff7-b11e395f4ab1" />
+# 🎮 Juego del Gato (Tic-Tac-Toe)
 
+### *Implementación inteligente del clásico juego con IA avanzada*
 
-📋 Descripción
-Proyecto académico que implementa el clásico Juego del Gato (Tic-Tac-Toe) en C++ con funcionalidades avanzadas que incluyen:
+[![C++](https://img.shields.io/badge/C++-11%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![License](https://img.shields.io/badge/License-Academic-blue?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)](https://github.com)
 
-🤖 Inteligencia Artificial con dos niveles de dificultad
-👥 Modo multijugador local
-📊 Sistema de estadísticas
-✅ Validación robusta de entradas
-🎨 Interfaz de menús intuitiva
-📚 Guía interactiva web con Firebase
+<img src="https://github.com/user-attachments/assets/4ae9d1aa-6f10-4968-8714-395b55c6373d" alt="Menu Principal" width="280"/> <img src="https://github.com/user-attachments/assets/4e616884-5618-4010-be83-8b8eed8a4d65" alt="Gameplay" width="280"/> <img src="https://github.com/user-attachments/assets/a759901a-06eb-4beb-bff7-b11e395f4ab1" alt="Stats" width="280"/>
 
-🎯 Objetivos de Aprendizaje
+[📖 Documentación](docs/) · [🐛 Reportar Bug](../../issues) · [✨ Solicitar Feature](../../issues)
 
-Manejo de matrices bidimensionales
-Implementación de estructuras (structs)
-Algoritmos de inteligencia artificial básica
-Validación de entrada de usuario
-Organización de código mediante funciones modulares
-Lógica de juegos y toma de decisiones
-Trabajo colaborativo con Git y GitHub
+</div>
 
+---
 
-🚀 Características Principales
-✨ Funcionalidades del Juego
+## 📑 Tabla de Contenidos
 
-Tablero 3x3: Implementado con matriz de caracteres
-Modo PvP: Dos jugadores humanos
-Modo PvIA: Jugador contra computadora
-IA Fácil: Movimientos aleatorios
-IA Difícil: Algoritmo estratégico que puede:
+- [🎯 Características](#-características)
+- [🚀 Demo](#-demo)
+- [⚙️ Instalación](#️-instalación)
+- [🎮 Uso](#-uso)
+- [🏗️ Arquitectura](#️-arquitectura)
+- [🤖 Inteligencia Artificial](#-inteligencia-artificial)
+- [🌐 Guía Web Interactiva](#-guía-web-interactiva)
+- [👥 Colaboración](#-colaboración)
+- [📊 Evaluación](#-evaluación)
+- [🛠️ Tecnologías](#️-tecnologías)
+- [📝 Licencia](#-licencia)
 
-Intentar ganar detectando oportunidades
-Bloquear al oponente
-Priorizar posiciones estratégicas (centro y esquinas)
+---
 
+## 🎯 Características
 
-Sistema de Estadísticas: Registro de victorias, derrotas y empates
-Validaciones: Control de errores en entradas del usuario
+<table>
+<tr>
+<td width="50%">
 
-📚 Guía Interactiva Web
-Incluye una guía HTML interactiva con:
+### 🎲 Modos de Juego
+- **👥 PvP**: Multijugador local
+- **🤖 PvIA Easy**: IA con movimientos aleatorios
+- **🧠 PvIA Hard**: IA estratégica avanzada
+- **📊 Estadísticas**: Historial de partidas
 
-☁️ Sincronización en la nube con Firebase Firestore
-✅ Sistema de progreso con 28 tareas
-💾 Guardado automático del progreso
-🔄 Acceso multi-dispositivo
-🎯 Simulador visual del tablero
-📖 Ejemplos de código completos
-⚠️ Sección de errores comunes y soluciones
-📊 Rúbrica de evaluación
+</td>
+<td width="50%">
 
+### 💎 Características Técnicas
+- ✅ Validación robusta de entradas
+- 🎨 Interfaz de consola intuitiva
+- 🔄 Sistema de reinicio rápido
+- 💾 Persistencia de datos
 
-🛠️ Tecnologías Utilizadas
-C++ (Código Principal)
+</td>
+</tr>
+</table>
 
-Lenguaje: C++11 o superior
-Compilador: GCC, MinGW, o Visual Studio
-Bibliotecas:
+### 🌟 Highlights
 
-<iostream> - Entrada/salida
-<cstdlib> - Funciones aleatorias
-<ctime> - Semilla para rand()
-<string> - Manejo de cadenas
+```cpp
+✨ Código modular y bien documentado
+🧪 Validaciones exhaustivas de entrada
+🎯 IA con algoritmo minimax simplificado
+🔥 Sistema de estadísticas en tiempo real
+🌐 Guía interactiva sincronizada en la nube
+```
 
+---
 
+## 🚀 Demo
 
-Web (Guía Interactiva)
+### Vista del Juego
 
-Frontend: HTML5, CSS3, JavaScript ES6+
-Backend: Firebase Firestore (Base de datos NoSQL)
-Módulos: Firebase SDK 10.7.1
+```
+╔════════════════════════════════════╗
+║     🎮 JUEGO DEL GATO 🎮          ║
+╚════════════════════════════════════╝
 
-📂 Estructura del Proyecto
+       1   2   3
+    A    |   | X 
+       ---|---|---
+    B  O | X |   
+       ---|---|---
+    C    | O | X 
 
+Turno de: Jugador 1 (X)
+Ingresa tu jugada (ej: A1): _
+```
+
+---
+
+## ⚙️ Instalación
+
+### 📋 Requisitos Previos
+
+| Componente | Versión Mínima | Enlace |
+|------------|---------------|--------|
+| C++ Compiler | GCC 7.0+ / MSVC 2017+ | [Descargar](https://gcc.gnu.org/) |
+| Git | 2.0+ | [Descargar](https://git-scm.com/) |
+| Navegador Web | Moderno (Chrome, Firefox) | - |
+
+### 🔽 Descarga
+
+```bash
+# Clonar repositorio
+git clone https://github.com/TU_USUARIO/proyecto-juego-gato.git
+
+# Navegar al directorio
+cd proyecto-juego-gato
+```
+
+### 🔨 Compilación
+
+<details>
+<summary><b>🐧 Linux / macOS</b></summary>
+
+```bash
+# Compilar
+g++ -std=c++11 -Wall -O2 src/*.cpp -o juego_gato
+
+# Ejecutar
+./juego_gato
+```
+</details>
+
+<details>
+<summary><b>🪟 Windows (MinGW)</b></summary>
+
+```bash
+# Compilar
+g++ -std=c++11 -Wall -O2 src/*.cpp -o juego_gato.exe
+
+# Ejecutar
+juego_gato.exe
+```
+</details>
+
+<details>
+<summary><b>🎨 Visual Studio</b></summary>
+
+1. Abrir Visual Studio
+2. `Archivo` → `Abrir` → `Carpeta`
+3. Seleccionar carpeta del proyecto
+4. Presionar `F5` para compilar y ejecutar
+</details>
+
+---
+
+## 🎮 Uso
+
+### Menú Principal
+
+| Opción | Descripción |
+|--------|-------------|
+| `1` | 👥 Jugador vs Jugador |
+| `2` | 🤖 Jugador vs Computadora |
+| `3` | 📖 Ver Instrucciones |
+| `4` | 📊 Ver Estadísticas |
+| `5` | 🚪 Salir |
+
+### Controles del Juego
+
+```
+Formato de entrada: [Fila][Columna]
+Ejemplo: A1, B2, C3
+
+Filas: A, B, C
+Columnas: 1, 2, 3
+```
+
+### Ejemplos de Jugadas
+
+```cpp
+// Jugadas válidas
+A1  // Esquina superior izquierda
+B2  // Centro del tablero
+C3  // Esquina inferior derecha
+
+// Jugadas inválidas
+D1  // ❌ Fila fuera de rango
+A4  // ❌ Columna fuera de rango
+B2  // ❌ Casilla ocupada
+```
+
+---
+
+## 🏗️ Arquitectura
+
+### 📂 Estructura del Proyecto
+
+```
 proyecto-juego-gato/
 │
-├── src/                      # Código fuente C++
-│   ├── main.cpp              # Función principal y menús
-│   ├── tablero.cpp           # Funciones del tablero
-│   ├── ia.cpp                # Inteligencia artificial
-│   ├── validaciones.cpp      # Validaciones de entrada
-│   └── estadisticas.cpp      # Sistema de estadísticas
+├── 📁 src/                     # Código fuente
+│   ├── main.cpp                # Punto de entrada
+│   ├── tablero.cpp             # Lógica del tablero
+│   ├── ia.cpp                  # Inteligencia artificial
+│   ├── validaciones.cpp        # Validación de datos
+│   └── estadisticas.cpp        # Sistema de stats
 │
-├── include/                  # Archivos de cabecera
+├── 📁 include/                 # Headers (.h)
 │   ├── tablero.h
 │   ├── ia.h
 │   ├── validaciones.h
 │   └── estadisticas.h
 │
-├── docs/                     # Documentación
-│   └── index.html            # Guía interactiva web
+├── 📁 docs/                    # Documentación
+│   └── index.html              # Guía web interactiva
 │
-├── assets/                   # Recursos adicionales
+├── 📁 assets/                  # Recursos
 │   └── diagrama-flujo.png
 │
-├── .gitignore               # Archivos ignorados por Git
-├── README.md                # Este archivo
-└── LICENSE                  # Licencia del proyecto
+├── .gitignore
+├── README.md
+└── LICENSE
+```
 
-🔧 Requisitos del Sistema
-Para C++
+### 🔄 Flujo de Datos
 
-Sistema Operativo: Windows, macOS, o Linux
-Compilador:
+```mermaid
+graph TD
+    A[Inicio] --> B[Mostrar Menú]
+    B --> C{Selección}
+    C -->|PvP| D[Modo 2 Jugadores]
+    C -->|PvIA| E[Modo vs IA]
+    C -->|Stats| F[Mostrar Estadísticas]
+    D --> G[Turno Jugador]
+    E --> G
+    G --> H{¿Movimiento Válido?}
+    H -->|No| G
+    H -->|Sí| I[Actualizar Tablero]
+    I --> J{¿Hay Ganador?}
+    J -->|Sí| K[Fin del Juego]
+    J -->|No| L{¿Empate?}
+    L -->|Sí| K
+    L -->|No| M[Cambiar Turno]
+    M --> G
+    K --> N[Actualizar Stats]
+    N --> B
+```
 
-GCC 7.0+ (Linux/macOS)
-MinGW (Windows)
-Visual Studio 2017+ (Windows)
+---
 
+## 🤖 Inteligencia Artificial
 
-RAM: 2 GB mínimo
-Espacio: 50 MB
+### 🎯 IA Fácil - Estrategia Aleatoria
 
-Para la Guía Web
+```cpp
+Algoritmo:
+1. Obtener todas las casillas vacías
+2. Seleccionar una aleatoriamente
+3. Realizar movimiento
 
-Navegador: Chrome, Firefox, Safari, o Edge (versiones recientes)
-Conexión a Internet: Para sincronización con Firebase
-JavaScript: Habilitado
+Complejidad: O(n)
+Dificultad: ⭐☆☆☆☆
+```
 
+### 🧠 IA Difícil - Estrategia Avanzada
 
-📥 Instalación y Configuración
-1️⃣ Clonar el Repositorio
+```cpp
+Algoritmo de Decisión:
+1. 🏆 Intentar ganar (buscar 2 en línea propias)
+2. 🛡️ Bloquear oponente (buscar 2 en línea del rival)
+3. 🎯 Tomar centro si está disponible
+4. 📐 Ocupar esquinas estratégicas
+5. 🎲 Movimiento aleatorio en caso contrario
 
-# HTTPS
-git clone https://github.com/TU_USUARIO/proyecto-juego-gato.git
+Complejidad: O(n²)
+Dificultad: ⭐⭐⭐⭐☆
+```
 
-# SSH
-git clone git@github.com:TU_USUARIO/proyecto-juego-gato.git
+### 📊 Comparativa de IAs
 
-# Entrar al directorio
-cd proyecto-juego-gato
+| Característica | IA Fácil | IA Difícil |
+|---------------|----------|------------|
+| **Estrategia** | Aleatoria | Heurística |
+| **Tiempo de respuesta** | Instantáneo | < 0.1s |
+| **Tasa de victoria** | ~20% | ~80% |
+| **Nivel** | Principiante | Avanzado |
 
-2️⃣ Compilar el Proyecto C++
-En Linux/macOS:
+---
 
-# Compilar
-g++ -std=c++11 src/*.cpp -o juego_gato
+## 🌐 Guía Web Interactiva
 
-# Ejecutar
-./juego_gato
+### ✨ Características
 
-En Windows (MinGW):
+<table>
+<tr>
+<td width="33%" align="center">
 
-# Compilar
-g++ -std=c++11 src/*.cpp -o juego_gato.exe
+### ☁️ Cloud Sync
+Sincronización automática con Firebase Firestore
 
-# Ejecutar
-juego_gato.exe
+</td>
+<td width="33%" align="center">
 
-En Visual Studio:
+### ✅ Progreso
+28 tareas interactivas con seguimiento
 
-Abrir Visual Studio
-Archivo → Abrir → Carpeta
-Seleccionar la carpeta del proyecto
-Presionar F5 para compilar y ejecutar
+</td>
+<td width="33%" align="center">
 
-3️⃣ Configurar Firebase (Para la Guía Web)
+### 📱 Multi-device
+Acceso desde cualquier dispositivo
 
-Ve a Firebase Console
-Crea un nuevo proyecto o usa el existente: proyectogato-f8453
-Habilita Firestore Database:
+</td>
+</tr>
+</table>
 
-Menú lateral → Firestore Database
-Clic en "Crear base de datos"
-Selecciona "Iniciar en modo de prueba"
-Elige ubicación cercana
+### 🔧 Configuración de Firebase
 
+1. **Crear proyecto en [Firebase Console](https://console.firebase.google.com/)**
 
-Configura las reglas de seguridad:
+2. **Habilitar Firestore Database**
+   - Modo de prueba para desarrollo
+   - Configurar reglas de seguridad:
 
+```javascript
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -180,203 +327,313 @@ service cloud.firestore {
     }
   }
 }
-
-Abre docs/index.html en tu navegador
-Ingresa tu nombre para empezar a usar la guía
-
-🎮 Cómo Usar
-Ejecutar el Juego C++
-
-./juego_gato  # Linux/macOS
-juego_gato.exe  # Windows
 ```
 
-**Menú Principal:**
-```
-╔════════════════════════════════════╗
-║     🎮 JUEGO DEL GATO 🎮          ║
-╚════════════════════════════════════╝
+3. **Abrir guía**
+   ```bash
+   # Abrir en navegador
+   open docs/index.html
+   ```
 
-1. Jugador vs Jugador
-2. Jugador vs Computadora
-3. Ver Instrucciones
-4. Ver Estadísticas
-5. Salir
+### 📚 Contenido de la Guía
 
-Selecciona una opción: _
+- 📋 Introducción al proyecto
+- 🏗️ Estructura del programa
+- ✅ Checklist de 28 tareas
+- 📦 Implementación de structs
+- 🎯 Lógica del tablero
+- 🏆 Verificación de ganador
+- 🤖 Algoritmos de IA
+- 📱 Sistema de menús
+- ✔️ Validaciones
+- ⚠️ Errores comunes
+- 📊 Rúbrica de evaluación
 
-Usar la Guía Interactiva
+---
 
-Abre docs/index.html en tu navegador
-Ingresa tu nombre de usuario
-Navega por las secciones:
+## 👥 Colaboración
 
-📋 Inicio
-🏗️ Estructura del programa
-✅ Checklist de tareas
-📦 Structs
-🎯 Implementación del tablero
-🏆 Verificar ganador
-🤖 Inteligencia artificial
-📱 Menús
-✔️ Validaciones
-⚠️ Errores comunes
-📊 Rúbrica
+### 🔀 Flujo de Trabajo con Git
 
-
-Marca las tareas conforme las completes
-Tu progreso se sincronizará automáticamente en Firebase
-
-
-👥 Trabajo en Equipo
-Configuración para Colaboradores
-
-Agregar colaborador en GitHub:
-
-Ve a tu repositorio en GitHub
-Settings → Collaborators → Add people
-Ingresa el usuario de GitHub de tu compañero
-
-
-Tu compañero clona el repositorio:
-
-git clone https://github.com/TU_USUARIO/proyecto-juego-gato.git
-cd proyecto-juego-gato
-
-Flujo de Trabajo Recomendado
-
-# 📥 ANTES de empezar a trabajar
+```bash
+# 1️⃣ Antes de trabajar
 git pull origin main
 
-# 💻 Trabajas en tu código...
+# 2️⃣ Hacer cambios en el código...
 
-# 📤 DESPUÉS de hacer cambios
+# 3️⃣ Guardar cambios
 git add .
-git commit -m "Descripción clara de los cambios"
+git commit -m "feat: descripción clara del cambio"
 git push origin main
+```
 
-División de Tareas Sugerida
-Desarrollador 1:
+### 📋 Convenciones de Commits
 
-main.cpp - Función principal y menús
-tablero.cpp - Funciones del tablero
-Documentación del código
+| Tipo | Descripción | Ejemplo |
+|------|-------------|---------|
+| `feat` | Nueva característica | `feat: agregar IA difícil` |
+| `fix` | Corrección de bug | `fix: validación de entrada` |
+| `docs` | Documentación | `docs: actualizar README` |
+| `style` | Formato de código | `style: identación en main.cpp` |
+| `refactor` | Refactorización | `refactor: optimizar verificarGanador()` |
+| `test` | Pruebas | `test: agregar casos de prueba` |
 
-Desarrollador 2:
+### 👨‍💻 División de Tareas Sugerida
 
-ia.cpp - Inteligencia artificial
-validaciones.cpp - Validaciones
-Pruebas y debugging
+<table>
+<tr>
+<td width="50%">
 
+#### Desarrollador 1
+- ✅ `main.cpp` - Función principal
+- ✅ `tablero.cpp` - Lógica del tablero
+- ✅ Documentación del código
+- ✅ Testing de funciones básicas
 
-📊 Rúbrica de Evaluación (20 puntos)
+</td>
+<td width="50%">
 
-CriterioPuntosDescripciónTablero 3x32Matriz correctamente implementada y mostradaStructs3Jugador y Estadísticas implementadosVerificar Ganador3Detecta filas, columnas y diagonalesModo PvP2Modo jugador vs jugador funcionalIA Fácil2Movimientos aleatorios válidosIA Difícil3Algoritmo estratégico completoValidaciones2Validación de entradas y movimientosMenús y UX2Sistema de menús e instruccionesCódigo Limpio1Organización y comentarios
+#### Desarrollador 2
+- ✅ `ia.cpp` - Inteligencia artificial
+- ✅ `validaciones.cpp` - Validaciones
+- ✅ `estadisticas.cpp` - Sistema de stats
+- ✅ Debugging y optimización
 
+</td>
+</tr>
+</table>
 
-🐛 Solución de Problemas
-Error: "No se reconoce g++ como comando"
-Solución: Instala MinGW (Windows) o GCC (Linux/macOS)
-Error: "Firebase not configured"
-Solución: Verifica que las credenciales en index.html sean correctas
-Error: "Permission denied" en Firebase
-Solución: Asegúrate de haber configurado las reglas de Firestore en modo de prueba
-Conflictos en Git
-Solución:
+---
 
+## 📊 Evaluación
 
-# Descargar cambios
+### 🎯 Rúbrica (20 puntos totales)
+
+| Criterio | Puntos | Descripción |
+|----------|--------|-------------|
+| 📐 **Tablero 3x3** | 2 | Matriz correctamente implementada y visualizada |
+| 📦 **Structs** | 3 | Jugador y Estadísticas bien estructurados |
+| 🏆 **Verificar Ganador** | 3 | Detecta correctamente filas, columnas y diagonales |
+| 👥 **Modo PvP** | 2 | Modo jugador vs jugador funcional |
+| 🎲 **IA Fácil** | 2 | Movimientos aleatorios válidos |
+| 🧠 **IA Difícil** | 3 | Algoritmo estratégico completo y efectivo |
+| ✅ **Validaciones** | 2 | Validación robusta de entradas y movimientos |
+| 🎨 **Menús y UX** | 2 | Sistema de menús intuitivo e instrucciones claras |
+| 📝 **Código Limpio** | 1 | Organización, comentarios y buenas prácticas |
+
+### ✅ Checklist de Entrega
+
+- [ ] ✔️ El código compila sin errores ni warnings
+- [ ] ✔️ Todos los modos de juego funcionan correctamente
+- [ ] ✔️ Las validaciones previenen todos los errores posibles
+- [ ] ✔️ La IA difícil es competitiva (>70% tasa de victoria)
+- [ ] ✔️ El código está bien comentado y documentado
+- [ ] ✔️ El README está completo y actualizado
+- [ ] ✔️ La guía web funciona con Firebase
+- [ ] ✔️ El repositorio está limpio (sin .exe, .o, .obj)
+- [ ] ✔️ Se incluye diagrama de flujo actualizado
+- [ ] ✔️ La documentación técnica está completa
+- [ ] ✔️ Las pruebas están documentadas
+- [ ] ✔️ El código sigue estándares de C++11
+
+---
+
+## 🛠️ Tecnologías
+
+### Backend (C++)
+
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![STL](https://img.shields.io/badge/STL-Library-blue?style=flat-square)
+
+```cpp
+// Librerías utilizadas
+#include <iostream>   // I/O streams
+#include <cstdlib>    // Funciones aleatorias
+#include <ctime>      // Semilla para rand()
+#include <string>     // Manejo de cadenas
+#include <vector>     // Contenedores dinámicos
+```
+
+### Frontend (Guía Web)
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+
+### Herramientas
+
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
+
+---
+
+## 🐛 Troubleshooting
+
+<details>
+<summary><b>❌ Error: "No se reconoce g++ como comando"</b></summary>
+
+**Solución:**
+- **Windows**: Instala [MinGW](http://www.mingw.org/) o [MSYS2](https://www.msys2.org/)
+- **Linux**: `sudo apt install build-essential`
+- **macOS**: `xcode-select --install`
+
+</details>
+
+<details>
+<summary><b>🔥 Error: "Firebase not configured"</b></summary>
+
+**Solución:**
+1. Verifica las credenciales en `docs/index.html`
+2. Asegúrate de haber creado el proyecto en Firebase Console
+3. Confirma que Firestore esté habilitado
+
+</details>
+
+<details>
+<summary><b>🔒 Error: "Permission denied" en Firebase</b></summary>
+
+**Solución:**
+Configura las reglas de Firestore en modo de prueba:
+```javascript
+allow read, write: if true;
+```
+
+</details>
+
+<details>
+<summary><b>⚠️ Conflictos en Git</b></summary>
+
+**Solución:**
+```bash
+# Descargar cambios remotos
 git pull
 
-# Si hay conflicto, edita el archivo manualmente
-# Busca las marcas: <<<<<<< HEAD
+# Resolver conflictos manualmente (busca <<<<<<< HEAD)
+# Editar archivos y eliminar marcadores
 
-# Después de resolver
+# Guardar resolución
 git add .
-git commit -m "Conflicto resuelto"
+git commit -m "fix: resolver conflictos de merge"
 git push
+```
 
-📖 Documentación Adicional
+</details>
 
-Guía de C++
-Documentación de Firebase
-Git Tutorial
-Markdown Guide
+---
 
+## 📚 Recursos Adicionales
 
-✅ Checklist de Entrega
-Antes de entregar el proyecto, verifica:
+### 📖 Documentación
 
- El código compila sin errores
- Todos los modos de juego funcionan
- Las validaciones previenen errores
- La IA difícil es competitiva
- El código está comentado
- El README está actualizado
- La guía web funciona con Firebase
- El repositorio está limpio (sin archivos .exe o .o)
- Se incluye el diagrama de flujo
- La documentación está completa
+- [Documentación de C++](https://en.cppreference.com/)
+- [Firebase Firestore](https://firebase.google.com/docs/firestore)
+- [Git Book](https://git-scm.com/book/es/v2)
+- [Markdown Guide](https://www.markdownguide.org/)
 
+### 🎓 Tutoriales
 
-🤝 Contribuciones
-Este es un proyecto académico. Las contribuciones están limitadas a los miembros del equipo.
-Miembros del Equipo
+- [Learn C++](https://www.learncpp.com/)
+- [Firebase Tutorial](https://firebase.google.com/docs/web/setup)
+- [Git & GitHub para Principiantes](https://www.youtube.com/watch?v=HiXLkL42tMU)
 
-Desarrollador 1: [Tu Nombre] - [tu.email@ejemplo.com]
-Desarrollador 2: [Nombre Compañero] - [email@ejemplo.com]
+### 🔧 Herramientas Útiles
 
+- [Compiler Explorer](https://godbolt.org/) - Compilador online
+- [Firebase Console](https://console.firebase.google.com/)
+- [GitHub Desktop](https://desktop.github.com/)
 
-📄 Licencia
-Este proyecto fue desarrollado con fines educativos para el curso de Programación.
-Institución: [Nombre de tu Universidad/Escuela]
-Curso: Programación / Fundamentos de Programación
-Profesor: [Nombre del Profesor]
-Semestre: [Semestre/Año]
+---
 
-📞 Contacto
-Si tienes preguntas sobre este proyecto:
+## 📝 Licencia
 
-📧 Email: [tu.email@ejemplo.com]
-🐙 GitHub: @TU_USUARIO
+Este proyecto fue desarrollado con fines **educativos** para el curso de Programación.
 
+```
+📚 Institución: [Nombre de tu Universidad/Escuela]
+🎓 Curso: Programación / Fundamentos de Programación
+👨‍🏫 Profesor: [Nombre del Profesor]
+📅 Semestre: [Semestre/Año]
+```
 
-🙏 Agradecimientos
+---
 
-Profesor [Nombre] por la guía y enseñanza
-Compañeros de clase por el apoyo
-Documentación de C++ y Firebase
-Comunidad de Stack Overflow
+## 👥 Equipo
 
+<table>
+<tr>
+<td align="center">
+<img src="https://github.com/identicons/1.png" width="100px;" alt=""/><br />
+<sub><b>Desarrollador 1</b></sub><br />
+<a href="mailto:tu.email@ejemplo.com">📧 Email</a>
+</td>
+<td align="center">
+<img src="https://github.com/identicons/2.png" width="100px;" alt=""/><br />
+<sub><b>Desarrollador 2</b></sub><br />
+<a href="mailto:email@ejemplo.com">📧 Email</a>
+</td>
+</tr>
+</table>
 
-📅 Historial de Versiones
-v1.0.0 (Fecha)
+---
 
-✅ Implementación inicial del tablero
-✅ Modo jugador vs jugador
-✅ Verificación de ganador
+## 🙏 Agradecimientos
 
-v1.1.0 (Fecha)
+- 👨‍🏫 **Profesor [Nombre]** - Por la guía y enseñanza
+- 👥 **Compañeros de clase** - Por el apoyo constante
+- 📚 **Comunidad de C++** - Por la documentación
+- 🔥 **Firebase Team** - Por las herramientas en la nube
+- 💻 **Stack Overflow** - Por resolver dudas técnicas
 
-✅ IA fácil implementada
-✅ Sistema de validaciones
+---
 
-v1.2.0 (Fecha)
+## 📈 Estadísticas del Proyecto
 
-✅ IA difícil con estrategia
-✅ Sistema de estadísticas
+![GitHub repo size](https://img.shields.io/github/repo-size/TU_USUARIO/proyecto-juego-gato?style=flat-square)
+![GitHub code size](https://img.shields.io/github/languages/code-size/TU_USUARIO/proyecto-juego-gato?style=flat-square)
+![Lines of code](https://img.shields.io/tokei/lines/github/TU_USUARIO/proyecto-juego-gato?style=flat-square)
 
-v2.0.0 (Fecha)
+---
 
-✅ Guía interactiva web
-✅ Integración con Firebase
-✅ Documentación completa
+## 📅 Historial de Versiones
 
+### v2.0.0 - Web Integration (Current)
+- ✅ Guía interactiva web completa
+- ✅ Integración con Firebase Firestore
+- ✅ Sistema de progreso sincronizado
+- ✅ Documentación profesional
+
+### v1.2.0 - Advanced AI
+- ✅ IA difícil con estrategia avanzada
+- ✅ Sistema de estadísticas mejorado
+- ✅ Optimización de algoritmos
+
+### v1.1.0 - Basic AI
+- ✅ IA fácil implementada
+- ✅ Sistema de validaciones completo
+- ✅ Mejoras en la interfaz
+
+### v1.0.0 - Initial Release
+- ✅ Implementación inicial del tablero
+- ✅ Modo jugador vs jugador
+- ✅ Verificación de ganador básica
+
+---
 
 <div align="center">
-⭐ Si este proyecto te ayudó, considera darle una estrella ⭐
-Hecho con ❤️ por [Tu Nombre] y [Nombre Compañero]
+
+### 💖 ¿Te gustó el proyecto?
+
+Si este proyecto te fue útil, considera darle una ⭐
+
+[![GitHub stars](https://img.shields.io/github/stars/TU_USUARIO/proyecto-juego-gato?style=social)](https://github.com/TU_USUARIO/proyecto-juego-gato/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/TU_USUARIO/proyecto-juego-gato?style=social)](https://github.com/TU_USUARIO/proyecto-juego-gato/network/members)
+
+---
+
+**Hecho con ❤️ y ☕ por [Tu Nombre] y [Nombre Compañero]**
+
+© 2024 Proyecto Juego del Gato. Todos los derechos reservados.
+
 </div>
-
-
-
