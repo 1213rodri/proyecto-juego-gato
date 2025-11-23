@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎮 Juego del Gato (Tic-Tac-Toe)
+# 🎮 Juego del Gato 
 
 ### *Implementación inteligente del clásico juego con IA avanzada*
 
@@ -80,11 +80,11 @@
 ╚════════════════════════════════════╝
 
        1   2   3
-    A    |   | X 
+    A     |   | X 
        ---|---|---
-    B  O | X |   
+    B   O | X |   
        ---|---|---
-    C    | O | X 
+    C     | O | X 
 
 Turno de: Jugador 1 (X)
 Ingresa tu jugada (ej: A1): _
