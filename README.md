@@ -310,7 +310,7 @@ Acceso desde cualquier computadora
 
 <td width="33%" align="center">
 
-### Siti oWeb:
+### Sitio Web:
 
 https://sistema-de-progreso-proyecto.vercel.app/
 
