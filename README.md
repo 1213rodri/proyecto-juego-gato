@@ -304,9 +304,18 @@ Sincronización automática con Firebase Firestore
 <td width="33%" align="center">
 
 ### 📱 Multi-device
-Acceso desde cualquier dispositivo
+Acceso desde cualquier computadora
 
 </td>
+
+<td width="33%" align="center">
+
+### Siti oWeb:
+
+https://sistema-de-progreso-proyecto.vercel.app/
+
+</td>
+
 </tr>
 </table>
 
