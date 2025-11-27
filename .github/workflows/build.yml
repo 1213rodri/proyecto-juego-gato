@@ -1,0 +1,99 @@
+name: Build & Release Juego Gato
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    name: Build on Linux
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install g++
+        run: sudo apt-get update && sudo apt-get install -y g++
+
+      - name: Compile on Linux
+        run: |
+          g++ main.cpp -o juego_gato_linux
+          chmod +x juego_gato_linux
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: juego_gato_linux
+          path: juego_gato_linux
+
+  build-windows:
+    name: Build on Windows
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Compile on Windows (MinGW)
+        run: |
+          choco install mingw -y
+          g++ main.cpp -o juego_gato_windows.exe
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: juego_gato_windows
+          path: juego_gato_windows.exe
+
+  build-macos:
+    name: Build on macOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Compile on macOS
+        run: |
+          clang++ main.cpp -o juego_gato_macos
+          chmod +x juego_gato_macos
+
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: juego_gato_macos
+          path: juego_gato_macos
+
+  release:
+    name: Create GitHub Release
+    needs: [build-linux, build-windows, build-macos]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Linux artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: juego_gato_linux
+          path: ./bin
+
+      - name: Download Windows artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: juego_gato_windows
+          path: ./bin
+
+      - name: Download macOS artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: juego_gato_macos
+          path: ./bin
+
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            bin/juego_gato_linux
+            bin/juego_gato_windows.exe
+            bin/juego_gato_macos
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
