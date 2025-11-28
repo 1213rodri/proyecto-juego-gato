@@ -10,10 +10,19 @@
 #include <ctime>
 using namespace std;
 
+/*
+ * Función: gotoxy
+ * Descripción: Mueve el cursor a una posición específica en la terminal
+ * Parámetros: row (fila), col (columna)
+ */
 void gotoxy(int row, int col) {
     cout << "\x1b[" << row << ";" << col << "H";
 }
 
+/*
+ * Función: mostrarCreditos
+ * Descripción: Muestra información del proyecto y desarrolladores
+ */
 void mostrarCreditos() {
     system("clear");
     cout << "\n╔════════════════════════════════════╗" << endl;
@@ -25,13 +34,12 @@ void mostrarCreditos() {
     
     cout << "\n👨‍💻 Desarrolladores:" << endl;
     cout << "   • Rodrigo Nuñez Garcia" << endl;
-   
     
     cout << "\n👨‍🏫 Profesor:" << endl;
-    cout << "   • Virginia " << endl;
+    cout << "   • LAGUNES BARRADAS VIRGINIA" << endl;
     
     cout << "\n📅 Fecha: " << __DATE__ << endl;
-    cout << "\n🎮 Version: 1.0.0" << endl;
+    cout << "\n🎮 Version: 2.0.0 - Final" << endl;
     
     cout << "\n¡Gracias por jugar!" << endl;
 }
@@ -39,6 +47,11 @@ void mostrarCreditos() {
 #define BLOQUE_GRUESO "\u2588"
 #define ESPACIO_VACIO " "
 
+/*
+ * Función: simularBarraProgreso
+ * Descripción: Muestra una barra de progreso animada en la terminal
+ * Parámetros: duracionMs (duración en milisegundos), longitudBarra (longitud de la barra)
+ */
 void simularBarraProgreso(int duracionMs, int longitudBarra) {
     const int PASOS_TOTALES = 100;
     
@@ -50,7 +63,7 @@ void simularBarraProgreso(int duracionMs, int longitudBarra) {
         int bloquesLlenos = (int)(porcentaje * longitudBarra);
         int bloquesVacios = longitudBarra - bloquesLlenos;
         int porcentajeVisual = (int)(porcentaje * 100);
-        gotoxy(19, 3);
+        gotoxy(8, 1);
         std::cout <<""<<"["; 
         for (int i = 0; i < bloquesLlenos; ++i) {
             std::cout << BLOQUE_GRUESO;
@@ -66,56 +79,81 @@ void simularBarraProgreso(int duracionMs, int longitudBarra) {
     }
 }
 
-// ============================================
-// ESTRUCTURAS
-// ============================================
-
+/*
+ * Estructura: Jugador
+ * Descripción: Almacena la información de cada jugador
+ * Campos: nombre, simbolo (X u O), esHumano (verdadero si es jugador humano)
+ */
 struct Jugador {
     string nombre;
     char simbolo;
     bool esHumano;
 };
 
+/*
+ * Estructura: Estadisticas
+ * Descripción: Almacena los 7 contadores de estadísticas del juego
+ * Campos: partidasJ1vsJ2, partidasJ1vsCOM, victoriasJ1, victoriasJ2, 
+ *         victoriasCOM, empates, canceladas
+ */
 struct Estadisticas {
-    int victorias;
-    int derrotas;
+    int partidasJ1vsJ2;
+    int partidasJ1vsCOM;
+    int victoriasJ1;
+    int victoriasJ2;
+    int victoriasCOM;
     int empates;
-    int partidasJugadas;
+    int canceladas;
 };
 
-// Variable global para la dificultad
 int dificultadGlobal = 1;
 
-// ============================================
-// FUNCIONES DEL TABLERO
-// ============================================
-
+/*
+ * Función: inicializarTablero
+ * Descripción: Inicializa el tablero con números del 1 al 9
+ * Parámetros: tablero (matriz 3x3 de caracteres)
+ */
 void inicializarTablero(char tablero[3][3]) {
+    char numero = '1';
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
-            tablero[i][j] = ' ';
+            tablero[i][j] = numero++;
         }
     }
 }
 
+/*
+ * Función: mostrarTablero
+ * Descripción: Muestra el tablero de juego en pantalla
+ * Parámetros: tablero (matriz 3x3 de caracteres)
+ */
 void mostrarTablero(char tablero[3][3]) {
+    cout << "\n╔═══════════════════════════════════╗" << endl;
+    cout << "║          TABLERO DE JUEGO         ║" << endl;
+    cout << "╚═══════════════════════════════════╝" << endl;
     cout << "\n";
     for(int i = 0; i < 3; i++) {
-        cout << "  ";
+        cout << "        ";
         for(int j = 0; j < 3; j++) {
             cout << " " << tablero[i][j] << " ";
             if(j < 2) cout << "|";
         }
         cout << endl;
-        if(i < 2) cout << "  ---|---|---" << endl;
+        if(i < 2) cout << "        ---|---|---" << endl;
     }
     cout << "\n";
 }
 
+/*
+ * Función: tableroLleno
+ * Descripción: Verifica si todas las casillas del tablero están ocupadas
+ * Parámetros: tablero (matriz 3x3 de caracteres)
+ * Retorna: true si el tablero está lleno, false en caso contrario
+ */
 bool tableroLleno(char tablero[3][3]) {
     for(int i = 0; i < 3; i++) {
         for(int j = 0; j < 3; j++) {
-            if(tablero[i][j] == ' ') {
+            if(tablero[i][j] >= '1' && tablero[i][j] <= '9') {
                 return false;
             }
         }
@@ -123,10 +161,12 @@ bool tableroLleno(char tablero[3][3]) {
     return true;
 }
 
-// ============================================
-// FUNCIONES DE VERIFICACIÓN
-// ============================================
-
+/*
+ * Función: verificarFilas
+ * Descripción: Verifica si hay tres símbolos iguales en alguna fila
+ * Parámetros: tablero (matriz 3x3), simbolo (X u O)
+ * Retorna: true si hay tres en línea horizontal, false en caso contrario
+ */
 bool verificarFilas(char tablero[3][3], char simbolo) {
     for(int i = 0; i < 3; i++) {
         if(tablero[i][0] == simbolo && 
@@ -138,6 +178,12 @@ bool verificarFilas(char tablero[3][3], char simbolo) {
     return false;
 }
 
+/*
+ * Función: verificarColumnas
+ * Descripción: Verifica si hay tres símbolos iguales en alguna columna
+ * Parámetros: tablero (matriz 3x3), simbolo (X u O)
+ * Retorna: true si hay tres en línea vertical, false en caso contrario
+ */
 bool verificarColumnas(char tablero[3][3], char simbolo) {
     for(int j = 0; j < 3; j++) {
         if(tablero[0][j] == simbolo && 
@@ -149,6 +195,12 @@ bool verificarColumnas(char tablero[3][3], char simbolo) {
     return false;
 }
 
+/*
+ * Función: verificarDiagonales
+ * Descripción: Verifica si hay tres símbolos iguales en alguna diagonal
+ * Parámetros: tablero (matriz 3x3), simbolo (X u O)
+ * Retorna: true si hay tres en línea diagonal, false en caso contrario
+ */
 bool verificarDiagonales(char tablero[3][3], char simbolo) {
     if(tablero[0][0] == simbolo && 
        tablero[1][1] == simbolo && 
@@ -165,16 +217,24 @@ bool verificarDiagonales(char tablero[3][3], char simbolo) {
     return false;
 }
 
+/*
+ * Función: verificarGanador
+ * Descripción: Verifica si un jugador ha ganado (fila, columna o diagonal)
+ * Parámetros: tablero (matriz 3x3), simbolo (X u O)
+ * Retorna: true si el jugador ganó, false en caso contrario
+ */
 bool verificarGanador(char tablero[3][3], char simbolo) {
     return verificarFilas(tablero, simbolo) || 
            verificarColumnas(tablero, simbolo) || 
            verificarDiagonales(tablero, simbolo);
 }
 
-// ============================================
-// FUNCIONES DE VALIDACIÓN
-// ============================================
-
+/*
+ * Función: validarEntradaNumerica
+ * Descripción: Valida que la entrada del usuario sea numérica
+ * Parámetros: valor (referencia al entero a validar)
+ * Retorna: true si es válida, false en caso contrario
+ */
 bool validarEntradaNumerica(int& valor) {
     if(cin.fail()) {
         cin.clear();
@@ -185,6 +245,12 @@ bool validarEntradaNumerica(int& valor) {
     return true;
 }
 
+/*
+ * Función: validarRango
+ * Descripción: Valida que un valor esté dentro de un rango específico
+ * Parámetros: valor (número a validar), min (mínimo), max (máximo)
+ * Retorna: true si está en rango, false en caso contrario
+ */
 bool validarRango(int valor, int min, int max) {
     if(valor < min || valor > max) {
         cout << "\n❌ Error: Debe estar entre " << min << " y " << max << "." << endl;
@@ -193,13 +259,17 @@ bool validarRango(int valor, int min, int max) {
     return true;
 }
 
-bool movimientoValido(char tablero[3][3], int fila, int columna) {
-    if(fila < 0 || fila > 2 || columna < 0 || columna > 2) {
-        cout << "\n❌ Posicion fuera del tablero." << endl;
-        return false;
-    }
+/*
+ * Función: movimientoValido
+ * Descripción: Verifica si una posición del tablero está disponible
+ * Parámetros: tablero (matriz 3x3), posicion (número 1-9)
+ * Retorna: true si la casilla está libre, false si está ocupada
+ */
+bool movimientoValido(char tablero[3][3], int posicion) {
+    int fila = (posicion - 1) / 3;
+    int col = (posicion - 1) % 3;
     
-    if(tablero[fila][columna] != ' ') {
+    if(tablero[fila][col] == 'X' || tablero[fila][col] == 'O') {
         cout << "\n❌ Esa casilla ya esta ocupada." << endl;
         return false;
     }
@@ -207,77 +277,102 @@ bool movimientoValido(char tablero[3][3], int fila, int columna) {
     return true;
 }
 
-// ============================================
-// FUNCIONES DE IA
-// ============================================
-
+/*
+ * Función: movimientoIAFacil
+ * Descripción: Realiza un movimiento aleatorio para la IA en modo fácil
+ * Parámetros: tablero (matriz 3x3), simbolo (X u O)
+ */
 void movimientoIAFacil(char tablero[3][3], char simbolo) {
-    int fila, columna;
+    int posicion;
     
     do {
-        fila = rand() % 3;
-        columna = rand() % 3;
-    } while(tablero[fila][columna] != ' ');
+        posicion = (rand() % 9) + 1;
+    } while(!movimientoValido(tablero, posicion));
     
-    tablero[fila][columna] = simbolo;
-    cout << "\n🤖 IA juega en: (" << (fila + 1) << ", " << (columna + 1) << ")" << endl;
+    int fila = (posicion - 1) / 3;
+    int col = (posicion - 1) % 3;
+    
+    tablero[fila][col] = simbolo;
+    cout << "\n🤖 IA juega en la casilla: " << posicion << endl;
 }
 
+/*
+ * Función: intentarGanar
+ * Descripción: Intenta encontrar una jugada ganadora para la IA
+ * Parámetros: tablero (matriz 3x3), simbolo (símbolo de la IA)
+ * Retorna: true si encontró jugada ganadora, false en caso contrario
+ */
 bool intentarGanar(char tablero[3][3], char simbolo) {
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            if(tablero[i][j] == ' ') {
-                tablero[i][j] = simbolo;
-                
-                if(verificarGanador(tablero, simbolo)) {
-                    cout << "\n🧠 IA juega en: (" << (i + 1) << ", " << (j + 1) << ")" << endl;
-                    return true;
-                }
-                
-                tablero[i][j] = ' ';
+    for(int pos = 1; pos <= 9; pos++) {
+        if(movimientoValido(tablero, pos)) {
+            int fila = (pos - 1) / 3;
+            int col = (pos - 1) % 3;
+            
+            char temp = tablero[fila][col];
+            tablero[fila][col] = simbolo;
+            
+            if(verificarGanador(tablero, simbolo)) {
+                cout << "\n🧠 IA juega en la casilla: " << pos << endl;
+                return true;
             }
+            
+            tablero[fila][col] = temp;
         }
     }
     return false;
 }
 
+/*
+ * Función: bloquearOponente
+ * Descripción: Intenta bloquear una jugada ganadora del oponente
+ * Parámetros: tablero (matriz 3x3), simboloIA (símbolo de IA), simboloOponente
+ * Retorna: true si bloqueó exitosamente, false en caso contrario
+ */
 bool bloquearOponente(char tablero[3][3], char simboloIA, char simboloOponente) {
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            if(tablero[i][j] == ' ') {
-                tablero[i][j] = simboloOponente;
-                
-                if(verificarGanador(tablero, simboloOponente)) {
-                    tablero[i][j] = simboloIA;
-                    cout << "\n🛡️  IA bloquea en: (" << (i + 1) << ", " << (j + 1) << ")" << endl;
-                    return true;
-                }
-                
-                tablero[i][j] = ' ';
+    for(int pos = 1; pos <= 9; pos++) {
+        if(movimientoValido(tablero, pos)) {
+            int fila = (pos - 1) / 3;
+            int col = (pos - 1) % 3;
+            
+            char temp = tablero[fila][col];
+            tablero[fila][col] = simboloOponente;
+            
+            if(verificarGanador(tablero, simboloOponente)) {
+                tablero[fila][col] = simboloIA;
+                cout << "\n🛡️  IA bloquea en la casilla: " << pos << endl;
+                return true;
             }
+            
+            tablero[fila][col] = temp;
         }
     }
     return false;
 }
 
+/*
+ * Función: movimientoIADificil
+ * Descripción: Realiza movimiento estratégico de la IA en modo difícil
+ *              Prioridad: Ganar > Bloquear > Centro > Esquinas > Aleatorio
+ * Parámetros: tablero (matriz 3x3), simboloIA, simboloOponente
+ */
 void movimientoIADificil(char tablero[3][3], char simboloIA, char simboloOponente) {
     if(intentarGanar(tablero, simboloIA)) return;
     
     if(bloquearOponente(tablero, simboloIA, simboloOponente)) return;
     
-    if(tablero[1][1] == ' ') {
+    if(movimientoValido(tablero, 5)) {
         tablero[1][1] = simboloIA;
-        cout << "\n🎯 IA toma el centro: (2, 2)" << endl;
+        cout << "\n🎯 IA toma el centro: 5" << endl;
         return;
     }
     
-    int esquinas[4][2] = {{0,0}, {0,2}, {2,0}, {2,2}};
+    int esquinas[4] = {1, 3, 7, 9};
     for(int i = 0; i < 4; i++) {
-        int fila = esquinas[i][0];
-        int col = esquinas[i][1];
-        if(tablero[fila][col] == ' ') {
+        if(movimientoValido(tablero, esquinas[i])) {
+            int fila = (esquinas[i] - 1) / 3;
+            int col = (esquinas[i] - 1) % 3;
             tablero[fila][col] = simboloIA;
-            cout << "\n📐 IA toma esquina: (" << (fila + 1) << ", " << (col + 1) << ")" << endl;
+            cout << "\n📐 IA toma esquina: " << esquinas[i] << endl;
             return;
         }
     }
@@ -285,14 +380,17 @@ void movimientoIADificil(char tablero[3][3], char simboloIA, char simboloOponent
     movimientoIAFacil(tablero, simboloIA);
 }
 
-// ============================================
-// FUNCIÓN PRINCIPAL DE JUEGO
-// ============================================
-
-void jugarPartida(char tablero[3][3], Jugador& j1, Jugador& j2, Estadisticas& stats) {
+/*
+ * Función: jugarPartida
+ * Descripción: Controla el flujo de una partida completa del juego
+ * Parámetros: tablero (matriz 3x3), j1 (jugador 1), j2 (jugador 2),
+ *             stats (estadísticas), esVsIA (indica si juega contra IA)
+ */
+void jugarPartida(char tablero[3][3], Jugador& j1, Jugador& j2, Estadisticas& stats, bool esVsIA) {
     inicializarTablero(tablero);
     bool juegoTerminado = false;
     int turnoActual = 0;
+    bool partidaCancelada = false;
     
     while(!juegoTerminado) {
         system("clear");
@@ -307,30 +405,35 @@ void jugarPartida(char tablero[3][3], Jugador& j1, Jugador& j2, Estadisticas& st
         cout << "\n🎲 Turno de: " << actual.nombre << " (" << actual.simbolo << ")" << endl;
         
         if(actual.esHumano) {
-            int fila, columna;
+            int posicion;
             bool movimientoExitoso = false;
             
             while(!movimientoExitoso) {
-                cout << "\nIngresa fila (1-3): ";
-                cin >> fila;
+                cout << "\nIngresa la posicion (1-9) o 0 para cancelar: ";
+                cin >> posicion;
                 
-                if(!validarEntradaNumerica(fila)) continue;
-                if(!validarRango(fila, 1, 3)) continue;
+                if(!validarEntradaNumerica(posicion)) continue;
                 
-                cout << "Ingresa columna (1-3): ";
-                cin >> columna;
+                if(posicion == 0) {
+                    cout << "\n⚠️  Partida cancelada por el jugador." << endl;
+                    partidaCancelada = true;
+                    juegoTerminado = true;
+                    stats.canceladas++;
+                    break;
+                }
                 
-                if(!validarEntradaNumerica(columna)) continue;
-                if(!validarRango(columna, 1, 3)) continue;
+                if(!validarRango(posicion, 1, 9)) continue;
                 
-                fila--;
-                columna--;
-                
-                if(movimientoValido(tablero, fila, columna)) {
-                    tablero[fila][columna] = actual.simbolo;
+                if(movimientoValido(tablero, posicion)) {
+                    int fila = (posicion - 1) / 3;
+                    int col = (posicion - 1) % 3;
+                    tablero[fila][col] = actual.simbolo;
                     movimientoExitoso = true;
                 }
             }
+            
+            if(partidaCancelada) break;
+            
         } else {
             std::this_thread::sleep_for(std::chrono::milliseconds(800));
             
@@ -344,6 +447,8 @@ void jugarPartida(char tablero[3][3], Jugador& j1, Jugador& j2, Estadisticas& st
             std::this_thread::sleep_for(std::chrono::milliseconds(500));
         }
         
+        if(partidaCancelada) break;
+        
         if(verificarGanador(tablero, actual.simbolo)) {
             system("clear");
             cout << "\n╔════════════════════════════════════╗" << endl;
@@ -354,13 +459,24 @@ void jugarPartida(char tablero[3][3], Jugador& j1, Jugador& j2, Estadisticas& st
             
             cout << "\n🎉 ¡" << actual.nombre << " ha ganado!" << endl;
             
-            if(turnoActual == 0) {
-                stats.victorias++;
+            if(esVsIA) {
+                stats.partidasJ1vsCOM++;
+                if(turnoActual == 0) {
+                    stats.victoriasJ1++;
+                } else {
+                    stats.victoriasCOM++;
+                }
             } else {
-                stats.derrotas++;
+                stats.partidasJ1vsJ2++;
+                if(turnoActual == 0) {
+                    stats.victoriasJ1++;
+                } else {
+                    stats.victoriasJ2++;
+                }
             }
             
             juegoTerminado = true;
+            
         } else if(tableroLleno(tablero)) {
             system("clear");
             cout << "\n╔════════════════════════════════════╗" << endl;
@@ -371,71 +487,112 @@ void jugarPartida(char tablero[3][3], Jugador& j1, Jugador& j2, Estadisticas& st
             
             cout << "\n😐 ¡Empate! Nadie ha ganado." << endl;
             stats.empates++;
+            
+            if(esVsIA) {
+                stats.partidasJ1vsCOM++;
+            } else {
+                stats.partidasJ1vsJ2++;
+            }
+            
             juegoTerminado = true;
         }
         
         turnoActual = 1 - turnoActual;
     }
-    
-    stats.partidasJugadas++;
 }
 
-// ============================================
-// MODOS DE JUEGO
-// ============================================
-
+/*
+ * Función: modoJugadorVsJugador
+ * Descripción: Inicia el modo de juego entre dos jugadores humanos
+ * Parámetros: stats (referencia a las estadísticas del juego)
+ */
 void modoJugadorVsJugador(Estadisticas& stats) {
     char tablero[3][3];
     Jugador j1, j2;
+    char jugarOtra;
     
     j1.esHumano = true;
     j2.esHumano = true;
     
-    system("clear");
-    cout << "\n╔════════════════════════════════════╗" << endl;
-    cout << "║      👥 JUGADOR VS JUGADOR         ║" << endl;
-    cout << "╚════════════════════════════════════╝" << endl;
-    
-    cout << "\nNombre del Jugador 1 (X): ";
-    cin >> j1.nombre;
-    cout << "Nombre del Jugador 2 (O): ";
-    cin >> j2.nombre;
-    
-    j1.simbolo = 'X';
-    j2.simbolo = 'O';
-    
-    jugarPartida(tablero, j1, j2, stats);
+    do {
+        system("clear");
+        cout << "\n╔════════════════════════════════════╗" << endl;
+        cout << "║      👥 JUGADOR VS JUGADOR         ║" << endl;
+        cout << "╚════════════════════════════════════╝" << endl;
+        
+        cout << "\nNombre del Jugador 1 (X): ";
+        cin >> j1.nombre;
+        cout << "Nombre del Jugador 2 (O): ";
+        cin >> j2.nombre;
+        
+        j1.simbolo = 'X';
+        j2.simbolo = 'O';
+        
+        jugarPartida(tablero, j1, j2, stats, false);
+        
+        cout << "\n¿Desea jugar otra partida? (S/N): ";
+        cin >> jugarOtra;
+        
+    } while(jugarOtra == 'S' || jugarOtra == 's');
 }
 
-void modoJugadorVsIA(Estadisticas& stats, int dificultad) {
+/*
+ * Función: modoJugadorVsIA
+ * Descripción: Inicia el modo de juego entre jugador humano y computadora
+ * Parámetros: stats (referencia a las estadísticas del juego)
+ */
+void modoJugadorVsIA(Estadisticas& stats) {
     char tablero[3][3];
     Jugador j1, j2;
-    
-    dificultadGlobal = dificultad;
+    char jugarOtra;
+    int quienEmpieza;
     
     j1.esHumano = true;
     j2.esHumano = false;
     
-    system("clear");
-    cout << "\n╔════════════════════════════════════╗" << endl;
-    cout << "║      🤖 JUGADOR VS IA              ║" << endl;
-    cout << "╚════════════════════════════════════╝" << endl;
-    
-    cout << "\nTu nombre: ";
-    cin >> j1.nombre;
-    
-    j2.nombre = (dificultad == 1) ? "IA Facil" : "IA Dificil";
-    
-    j1.simbolo = 'X';
-    j2.simbolo = 'O';
-    
-    jugarPartida(tablero, j1, j2, stats);
+    do {
+        system("clear");
+        cout << "\n╔════════════════════════════════════╗" << endl;
+        cout << "║      🤖 JUGADOR VS IA              ║" << endl;
+        cout << "╚════════════════════════════════════╝" << endl;
+        
+        cout << "\nTu nombre: ";
+        cin >> j1.nombre;
+        
+        j2.nombre = (dificultadGlobal == 1) ? "IA Facil" : "IA Dificil";
+        
+        cout << "\n¿Quien desea que tire primero?" << endl;
+        cout << "1. " << j1.nombre << " (Jugador)" << endl;
+        cout << "2. " << j2.nombre << " (Computadora)" << endl;
+        cout << "Opcion: ";
+        cin >> quienEmpieza;
+        
+        while(quienEmpieza != 1 && quienEmpieza != 2) {
+            cout << "❌ Opcion invalida. Ingresa 1 o 2: ";
+            cin >> quienEmpieza;
+        }
+        
+        if(quienEmpieza == 1) {
+            j1.simbolo = 'X';
+            j2.simbolo = 'O';
+            jugarPartida(tablero, j1, j2, stats, true);
+        } else {
+            j2.simbolo = 'X';
+            j1.simbolo = 'O';
+            jugarPartida(tablero, j2, j1, stats, true);
+        }
+        
+        cout << "\n¿Desea jugar otra partida? (S/N): ";
+        cin >> jugarOtra;
+        
+    } while(jugarOtra == 'S' || jugarOtra == 's');
 }
 
-// ============================================
-// ESTADÍSTICAS
-// ============================================
-
+/*
+ * Función: mostrarEstadisticas
+ * Descripción: Muestra todas las estadísticas del juego en pantalla
+ * Parámetros: stats (estructura con las estadísticas)
+ */
 void mostrarEstadisticas(Estadisticas stats) {
     system("clear");
     
@@ -443,17 +600,27 @@ void mostrarEstadisticas(Estadisticas stats) {
     cout << "║        📊 ESTADISTICAS             ║" << endl;
     cout << "╚════════════════════════════════════╝" << endl;
     
-    cout << "\n📈 Partidas jugadas: " << stats.partidasJugadas << endl;
-    cout << "🏆 Victorias: " << stats.victorias << endl;
-    cout << "💀 Derrotas: " << stats.derrotas << endl;
-    cout << "🤝 Empates: " << stats.empates << endl;
+    cout << "\n📈 Partidas jugadas J1 VS J2: " << stats.partidasJ1vsJ2 << endl;
+    cout << "📈 Partidas jugadas J1 VS COM: " << stats.partidasJ1vsCOM << endl;
+    cout << "🏆 Partidas ganadas por J1: " << stats.victoriasJ1 << endl;
+    cout << "🏆 Partidas ganadas por J2: " << stats.victoriasJ2 << endl;
+    cout << "🏆 Partidas ganadas por COM: " << stats.victoriasCOM << endl;
+    cout << "🤝 Partidas empatadas: " << stats.empates << endl;
+    cout << "⚠️  Partidas canceladas: " << stats.canceladas << endl;
     
-    if(stats.partidasJugadas > 0) {
-        float porcentaje = ((float)stats.victorias / stats.partidasJugadas) * 100;
-        cout << "\n✨ Porcentaje de victorias: " << fixed << setprecision(1) << porcentaje << "%" << endl;
+    int totalPartidas = stats.partidasJ1vsJ2 + stats.partidasJ1vsCOM;
+    
+    if(totalPartidas > 0) {
+        float porcentajeJ1 = ((float)stats.victoriasJ1 / totalPartidas) * 100;
+        cout << "\n✨ Porcentaje de victorias J1: " << fixed << setprecision(1) << porcentajeJ1 << "%" << endl;
     }
 }
 
+/*
+ * Función: reiniciarEstadisticas
+ * Descripción: Reinicia todos los contadores de estadísticas a cero
+ * Parámetros: stats (referencia a las estadísticas del juego)
+ */
 void reiniciarEstadisticas(Estadisticas& stats) {
     char confirmar;
     
@@ -461,10 +628,13 @@ void reiniciarEstadisticas(Estadisticas& stats) {
     cin >> confirmar;
     
     if(confirmar == 'S' || confirmar == 's') {
-        stats.victorias = 0;
-        stats.derrotas = 0;
+        stats.partidasJ1vsJ2 = 0;
+        stats.partidasJ1vsCOM = 0;
+        stats.victoriasJ1 = 0;
+        stats.victoriasJ2 = 0;
+        stats.victoriasCOM = 0;
         stats.empates = 0;
-        stats.partidasJugadas = 0;
+        stats.canceladas = 0;
         
         cout << "\n✅ Estadisticas reiniciadas con exito." << endl;
     } else {
@@ -472,108 +642,150 @@ void reiniciarEstadisticas(Estadisticas& stats) {
     }
 }
 
-// ============================================
-// INSTRUCCIONES
-// ============================================
-
-void mostrarInstrucciones() {
+/*
+ * Función: mostrarInstruccionesJuego
+ * Descripción: Muestra las instrucciones de cómo se juega el gato
+ */
+void mostrarInstruccionesJuego() {
     system("clear");
     
     cout << "\n╔════════════════════════════════════╗" << endl;
-    cout << "║        📖 INSTRUCCIONES            ║" << endl;
+    cout << "║    📖 INSTRUCCIONES DEL JUEGO      ║" << endl;
     cout << "╚════════════════════════════════════╝" << endl;
-    cout << "\n╔════════════════════════════════════╗" << endl;
-    cout << "║        🎮 CÓMO JUGAR               ║" << endl;
-    cout << "║                                    ║" << endl;
-    cout << "║  - OBJETIVO: Formar 3 en línea     ║" << endl;
-    cout << "║  - CÓMO JUGAR:                     ║" << endl;
-    cout << "║    Turnos alternados, ingresar fila║" << endl;
-    cout << "║    y columna (1-3)                 ║" << endl;
-    cout << "║  - CONDICIONES DE VICTORIA:        ║" << endl;
-    cout << "║    3 horizontales, verticales o    ║" << endl;
-    cout << "║    diagonales                      ║" << endl;
-    cout << "║  - EMPATE: Tablero lleno sin       ║" << endl;
-    cout << "║    ganador                         ║" << endl;
-    cout << "║  - MODOS DE JUEGO:                 ║" << endl;
-    cout << "║    PvP, IA Fácil, IA Difícil       ║" << endl;
-    cout << "╚════════════════════════════════════╝" << endl;
+    
+    cout << "\n🎯 OBJETIVO:" << endl;
+    cout << "   Ser el primero en formar una linea de 3" << endl;
+    cout << "   simbolos iguales (horizontal, vertical" << endl;
+    cout << "   o diagonal)" << endl;
+    
+    cout << "\n📋 COMO SE JUEGA:" << endl;
+    cout << "   1. El tablero tiene 9 casillas numeradas" << endl;
+    cout << "      del 1 al 9" << endl;
+    cout << "   2. El Jugador 1 marca con 'X'" << endl;
+    cout << "   3. El Jugador 2 (o IA) marca con 'O'" << endl;
+    cout << "   4. Se turnan para elegir una casilla" << endl;
+    cout << "   5. Gana quien complete 3 en linea primero" << endl;
+    cout << "   6. Si se llena sin ganador: EMPATE" << endl;
+    
+    cout << "\n⚠️  CONDICIONES:" << endl;
+    cout << "   • Puedes cancelar ingresando 0" << endl;
+    cout << "   • Las casillas ocupadas no se pueden usar" << endl;
 }
 
-// ============================================
-// MENÚ PRINCIPAL
-// ============================================
+/*
+ * Función: mostrarInstruccionesPrograma
+ * Descripción: Muestra las instrucciones de cómo utilizar el programa
+ */
+void mostrarInstruccionesPrograma() {
+    system("clear");
+    
+    cout << "\n╔════════════════════════════════════╗" << endl;
+    cout << "║   💻 INSTRUCCIONES DEL PROGRAMA    ║" << endl;
+    cout << "╚════════════════════════════════════╝" << endl;
+    
+    cout << "\n🎮 MODOS DE JUEGO:" << endl;
+    cout << "   • Jugador vs Jugador: Dos humanos" << endl;
+    cout << "   • Jugador vs IA: Contra computadora" << endl;
+    
+    cout << "\n🤖 DIFICULTADES DE LA IA:" << endl;
+    cout << "   • Facil: Movimientos aleatorios" << endl;
+    cout << "   • Dificil: Estrategia avanzada" << endl;
+    cout << "   (bloqueo, ataque, centro, esquinas)" << endl;
+    
+    cout << "\n📊 ESTADISTICAS:" << endl;
+    cout << "   El programa guarda:" << endl;
+    cout << "   - Partidas J1 vs J2" << endl;
+    cout << "   - Partidas J1 vs COM" << endl;
+    cout << "   - Victorias de cada jugador" << endl;
+    cout << "   - Empates y canceladas" << endl;
+    
+    cout << "\n🎯 COMO USAR:" << endl;
+    cout << "   1. Selecciona modo desde el menu" << endl;
+    cout << "   2. Ingresa los nombres" << endl;
+    cout << "   3. Elige casilla (1-9) o 0 para cancelar" << endl;
+    cout << "   4. Puedes configurar la dificultad" << endl;
+    cout << "   5. Ver estadisticas en cualquier momento" << endl;
+}
 
-void menuPrincipal() {
-    int op;
+/*
+ * Función: menuInstrucciones
+ * Descripción: Muestra el submenú de instrucciones con sus opciones
+ */
+void menuInstrucciones() {
+    int opcion;
     
-    Estadisticas stats;
-    stats.victorias = 0;
-    stats.derrotas = 0;
-    stats.empates = 0;
-    stats.partidasJugadas = 0;
-    
-    srand(time(0));
-    
-    do {  
+    do {
         system("clear");
-        cout << "\n";
-        cout << "  ╔═══════════════════════════════════╗\n";  
-        cout << "  ║      🎮 JUEGO DEL GATO 🎮         ║\n";  
-        cout << "  ╠═══════════════════════════════════╣\n";  
-        cout << "  ║                                   ║\n";  
-        cout << "  ║  👥 1. Jugador vs Jugador         ║\n";  
-        cout << "  ║  🤖 2. Jugador vs IA (Facil)      ║\n";  
-        cout << "  ║  🧠 3. Jugador vs IA (Dificil)    ║\n";  
-        cout << "  ║  📖 4. Instrucciones              ║\n";
-        cout << "  ║  📊 5. Estadisticas               ║\n";
-        cout << "  ║  🔄 6. Reiniciar Stats            ║\n";
-        cout << "  ║  ℹ️  7. Creditos                   ║\n";
-        cout << "  ║  🚪 8. Salir                      ║\n";
-        cout << "  ║                                   ║\n";  
-        cout << "  ╠═══════════════════════════════════╣\n";  
-        cout << "  ║ Opcion:                           ║\n"; 
-        gotoxy(17, 1);
-        cout << "  ╚═══════════════════════════════════╝\n\n"; 
-        gotoxy(16, 13);
-        cin >> op;
         
-        switch(op) {
+        cout << "\n╔════════════════════════════════════╗" << endl;
+        cout << "║        📖 INSTRUCCIONES            ║" << endl;
+        cout << "╚════════════════════════════════════╝" << endl;
+        
+        cout << "\n1. Instrucciones del juego (como se juega)" << endl;
+        cout << "2. Instrucciones del programa (como utilizarlo)" << endl;
+        cout << "3. Regresar al menu principal" << endl;
+        
+        cout << "\nSelecciona una opcion: ";
+        cin >> opcion;
+        
+        switch(opcion) {
             case 1:
-                modoJugadorVsJugador(stats);
+                mostrarInstruccionesJuego();
+                cout << "\nPresiona Enter para continuar";
+                cin.ignore();
+                cin.get();
                 break;
             case 2:
-                modoJugadorVsIA(stats, 1);
+                mostrarInstruccionesPrograma();
+                cout << "\nPresiona Enter para continuar";
+                cin.ignore();
+                cin.get();
                 break;
             case 3:
-                modoJugadorVsIA(stats, 2);
-                break;
-            case 4:
-                mostrarInstrucciones();
-                break;
-            case 5:
-                mostrarEstadisticas(stats);
-                break;
-            case 6:
-                reiniciarEstadisticas(stats);
-                break;
-            case 7:
-                mostrarCreditos();
-                break;
-            case 8:
-                simularBarraProgreso(1000, 30);
-                cout << endl;
-                cout << "\n  ¡Gracias por jugar! Hasta pronto." << endl;
                 break;
             default:
-                cout << "\n❌ Opcion invalida. Intenta de nuevo." << endl;
+                cout << "\n❌ Opcion invalida." << endl;
+                std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
         
-        if(op != 8) {
-            cout << "\nPresiona Enter para continuar";
-            cin.ignore();
-            cin.get();
-        }
-    } while(op != 8);
+    } while(opcion != 3);
+}
+
+/*
+ * Función: menuConfigurarDificultad
+ * Descripción: Permite al usuario configurar la dificultad de la IA
+ */
+void menuConfigurarDificultad() {
+    int opcion;
+    
+    system("clear");
+    
+    cout << "\n╔════════════════════════════════════╗" << endl;
+    cout << "║    ⚙️  CONFIGURAR DIFICULTAD        ║" << endl;
+    cout << "╚════════════════════════════════════╝" << endl;
+    
+    cout << "\nDificultad actual: " << (dificultadGlobal == 1 ? "Facil" : "Dificil") << endl;
+    
+    cout << "\nSelecciona la dificultad:" << endl;
+    cout << "1. Facil (Movimientos aleatorios)" << endl;
+    cout << "2. Dificil (Estrategia avanzada)" << endl;
+    
+    cout << "\nOpcion: ";
+    cin >> opcion;
+    
+    if(opcion == 1) {
+        dificultadGlobal = 1;
+        cout << "\n✅ Dificultad establecida en: FACIL" << endl;
+    } else if(opcion == 2) {
+        dificultadGlobal = 2;
+        cout << "\n✅ Dificultad establecida en: DIFICIL" << endl;
+    } else {
+        cout << "\n❌ Opcion invalida. Dificultad sin cambios." << endl;
+    }
+    
+    cout << "\nPresiona Enter para continuar";
+    cin.ignore();
+    cin.get();
 }
 
 #endif

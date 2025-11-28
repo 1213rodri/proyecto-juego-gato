@@ -1,15 +1,15 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -O2
 
-SRC = main.cpp
-HDR = FuncionesJuegoGato.h
+SRC = $(wildcard *.cpp)
+OBJ = $(SRC:.cpp=.o)
 
 OUT = juego_gato
 
 all: $(OUT)
 
-$(OUT): $(SRC) $(HDR)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(OUT)
+$(OUT): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(OUT)
 
 clean:
-	rm -f $(OUT)
+	rm -f $(OBJ) $(OUT)
