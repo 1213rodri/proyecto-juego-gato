@@ -105,7 +105,7 @@ Turno de: Jugador 1 (X)
 
 ```bash
 # Clonar repositorio
-git clone https://github.com/TU_USUARIO/proyecto-juego-gato.git
+git clone https://github.com/1213rodri/proyecto-juego-gato.git
 
 # Navegar al directorio
 cd proyecto-juego-gato
@@ -195,16 +195,16 @@ proyecto-juego-gato/
 │
 ├── 📁 src/                     # Código fuente
 │   ├── main.cpp                # Punto de entrada
-│   ├── tablero.cpp             # Lógica del tablero
-│   ├── ia.cpp                  # Inteligencia artificial
-│   ├── validaciones.cpp        # Validación de datos
-│   └── estadisticas.cpp        # Sistema de stats
+│   ├── tablero                 # Lógica del tablero
+│   ├── ia                      # Inteligencia artificial
+│   ├── validaciones            # Validación de datos
+│   └── estadisticas            # Sistema de stats
 │
 ├── 📁 include/                 # Headers (.h)
-│   ├── tablero.h
-│   ├── ia.h
-│   ├── validaciones.h
-│   └── estadisticas.h
+│   ├── tablero
+│   ├── ia
+│   ├── validaciones
+│   └── estadisticas
 │
 ├── 📁 docs/                    # Documentación
 │   └── index.html              # Guía web interactiva
